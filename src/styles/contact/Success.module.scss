@@ -1,0 +1,79 @@
+@use "../globals.scss" as *;
+.container {
+  margin: 0 auto;
+  padding: 20px;
+  font-family: $noto;
+}
+.title {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 40px 0;
+  text-align: center;
+  line-height: 1.5;
+  color: $bk;
+  @media screen and (max-width: 768px) {
+    font-size: 32px;
+  }
+  @media screen and (max-width: 480px) {
+    font-size: 24px;
+  }
+}
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+.imgarea {
+  position: relative;
+  margin-right: 20px;
+  display: block;
+}
+.img {
+  width: 500px;
+  height: 100%;
+  border-radius: 20px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.16);
+  object-fit: cover;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.description {
+  font-size: 20px;
+  line-height: 1.8;
+  color: $bk;
+  margin: 10px;
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+  }
+  @media screen and (max-width: 480px) {
+    font-size: 12px;
+  }
+}
+
+.btn {
+  margin: 0 auto;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 50px;
+  background-color: $bk;
+  color: $wh;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.br {
+  display: none; //768px以上では改行タグを無効に。
+}
+@media screen and (max-width: 768px) {
+  .br {
+    display: block; //768px未満で改行タグを有効に。
+  }
+}

@@ -1,0 +1,158 @@
+@use "../../globals.scss" as *;
+
+.section {
+  padding: 20px;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+.title {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  text-align: center;
+  h2 {
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 1.5;
+    color: $bk;
+  }
+}
+.cardlist {
+  display: grid;
+  gap: 17px;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  justify-content: center;
+  justify-items: center;
+  height: 100%;
+  align-items: center;
+}
+.card {
+  width: 330px;
+  height: 340px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.16);
+  border-radius: 10px;
+}
+.img {
+  width: 330px;
+  height: 200px;
+  border-radius: 10px 10px 0 0;
+  object-fit: cover;
+}
+.date {
+  margin-top: 5px;
+  font-size: 16px;
+  font-family: $noto;
+}
+.tag {
+  font-size: 16px;
+  font-family: $noto;
+}
+.Article_title {
+  font-size: 24px;
+  font-family: $noto;
+  position: absolute;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+// .section {
+//   padding-top: 4rem;
+//   position: relative;
+//   overflow: hidden;
+// }
+// .container {
+//   padding-left: 1rem;
+//   padding-right: 1rem;
+//   margin-left: auto;
+//   margin-right: auto;
+// }
+// .title {
+//   max-width: 36rem;
+//   margin-left: auto;
+//   margin-right: auto;
+//   text-align: center;
+//   margin-bottom: 5rem;
+// }
+// .title_text {
+//   font-size: 3.5rem;
+//   line-height: 2rem /* 32px */;
+//   font-family: $noto;
+//   font-weight: 700;
+//   margin-bottom: 1.25rem /* 20px */;
+// }
+
+// .gridcontainer {
+//   display: grid;
+//   grid-template-rows: repeat(1, 1fr);
+//   grid-template-columns: repeat(1, 1fr);
+//   gap: 60px 30px;
+
+//   justify-content: center;
+//   align-content: center;
+//   justify-items: center;
+//   align-items: center;
+//   @media (min-width: 768px) {
+//     grid-template-rows: repeat(2, 1fr);
+//     grid-template-columns: repeat(2, 1fr);
+//     gap: 60px 0px;
+//   }
+
+//   @media (min-width: 1280px) {
+//     // grid-template-rows: repeat(3, 326px);
+//     grid-template-rows: repeat(3, 1fr);
+//     grid-template-columns: repeat(3, 1fr);
+//     gap: 60px 30px;
+//   }
+// }
+.fadeUp {
+  opacity: 0; /* 初期状態では透明に */
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+// .card {
+//   display: grid;
+//   grid-template-rows: subgrid;
+//   grid-row: span 1;
+//   position: relative;
+//   object-fit: cover;
+
+//   .img {
+//     width: 100%;
+//     display: inline-flex;
+//     align-items: center;
+//     justify-content: center;
+//     object-fit: cover;
+
+//     img {
+//       border-radius: 10px;
+//     }
+//   }
+//   .date {
+//     margin-top: 5px;
+//     font-size: 16px;
+//     font-family: $noto;
+//   }
+//   .tag {
+//     font-size: 16px;
+//     font-family: $noto;
+//   }
+//   .Article_title {
+//     font-size: 24px;
+//     font-family: $noto;
+//     position: absolute;
+//     margin-bottom: 30px;
+//   }
+// }

@@ -1,0 +1,50 @@
+@use "../globals.scss" as *;
+
+.img1 {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: 50% 70%;
+}
+.img2 {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: 50% 25%;
+}
+.img3 {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: center;
+}
+.img4 {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: top;
+}
+.img5 {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media screen and (max-width: 768px) {
+  .img1 {
+    height: 200px;
+  }
+  .img2 {
+    height: 200px;
+  }
+  .img3 {
+    height: 200px;
+  }
+  .img4 {
+    height: 200px;
+  }
+  .img5 {
+    height: 200px;
+  }
+}

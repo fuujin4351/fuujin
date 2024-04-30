@@ -1,0 +1,87 @@
+@import "../../globals.scss";
+
+.container {
+  padding-left: min(5.5vw, 8rem);
+  padding-right: min(5.5vw, 8rem);
+  max-width: 144rem;
+  margin: 0 auto;
+  @include sp {
+    padding-left: min(calc(20 / 375 * 100vw), 2rem);
+    padding-right: min(calc(20 / 375 * 100vw), 2rem);
+  }
+}
+.content {
+  padding-top: 6.4rem;
+  @include sp {
+    padding-top: 4rem;
+  }
+}
+.list {
+  display: flex;
+  justify-content: space-between;
+  gap: 2.4rem calc(40 / 1280 * 100%);
+  flex-wrap: wrap;
+  @include sp {
+    gap: 2.4rem 1.2rem;
+  }
+}
+.item {
+  width: calc(3 / 10 * 100%);
+  @include sp {
+    width: calc(50% - .6rem);
+  }
+}
+.imgArea {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: .4rem;
+  overflow: hidden;
+}
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.date {
+  margin-top: 1.6rem;
+  @include sp {
+    margin-top: 1.2rem;
+  }
+}
+.category {
+  margin-top: 1.6rem;
+  @include sp {
+    margin-top: 1.2rem;
+  }
+}
+.text {
+  margin-top: 0.8rem;
+  @include sp {
+    margin-top: 0.6rem;
+  }
+}
+.buttonArea {
+  margin-top: 6.4rem;
+  display: flex;
+  justify-content: right;
+  @include sp {
+    margin-top: 4rem;
+  }
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 3rem;
+  background-color: $red;
+  width: fit-content;
+  margin: 0 0 0 auto;
+  border-radius: 5rem;
+  border: solid 0.2rem $bk;
+  @include sp {
+    padding: 1.4rem 2rem;
+  }
+}
+.arrow {
+  transform: rotate(-35deg);
+}

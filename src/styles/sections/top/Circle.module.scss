@@ -1,0 +1,20 @@
+.container {
+    padding-top: 12rem;
+    position: relative;
+    height: 200rem;
+}
+.sticky {
+    position: sticky;
+    top: 0%;
+    left: 0;
+}
+.overflow {
+    width: 50rem;
+    aspect-ratio: 1 / 1;
+    background-color: #000;
+}
+.imgArea {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}

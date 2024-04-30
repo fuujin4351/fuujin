@@ -1,0 +1,31 @@
+@use "sass:math";
+
+// mixins
+@mixin pc {
+    @media screen and (min-width: 835px) {
+        @content;
+    }
+}
+
+@mixin sp {
+    @media screen and (max-width: 834px) {
+        @content;
+    }
+}
+
+@function vw($px) {
+    @return math.div($px , 1440) * 100vw;
+}
+
+
+.pc {
+    @include sp {
+        display: none !important;
+    }
+}
+
+.sp {
+    @include pc {
+        display: none !important;
+    }
+}

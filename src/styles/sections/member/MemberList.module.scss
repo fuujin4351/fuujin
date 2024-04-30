@@ -1,0 +1,104 @@
+@use "../../globals.scss" as *;
+
+.section {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $noto;
+}
+.container {
+  text-align: center;
+  padding: 0;
+}
+.title {
+  font-size: 3rem;
+  font-weight: $bold;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  text-align: center;
+  line-height: 1.5;
+  color: $bk;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $wh;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.16);
+  border-radius: 20px;
+  margin: 20px;
+  gap: 20px;
+}
+.link {
+  margin: 20px;
+}
+
+.image {
+  width: 400px;
+  height: 200px;
+
+  border-radius: 20px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.16);
+  object-fit: cover;
+}
+.content {
+  margin-top: 10px;
+}
+
+.title {
+  font-size: clamp(3.5rem, 3.25vw, 3.8rem);
+  font-weight: $medium;
+  line-height: 1.5;
+  letter-spacing: 0.5%;
+  color: $bk;
+}
+.tag {
+  font-size: clamp(1.5rem, 1.25vw, 1.8rem);
+  font-weight: $medium;
+  line-height: 1.5;
+  letter-spacing: 0.5%;
+  color: $bk;
+}
+
+.past {
+  max-width: 380px;
+  margin: 50px auto;
+  font-size: 2rem;
+  font-weight: $bold;
+  color: $wh;
+  background: $red;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border: solid 0.2rem $bk;
+}
+
+@media screen and (max-width: 834px) {
+  .container {
+    width: 680px;
+  }
+  .card {
+    gap: 10px;
+  }
+  .image {
+    width: 230px;
+    height: 120px;
+  }
+}
+@media screen and (max-width: 430px) {
+  .container {
+    width: 330px;
+  }
+  .card {
+    gap: 0px;
+  }
+  .image {
+    width: 100px;
+    height: 80px;
+  }
+}
