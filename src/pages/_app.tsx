@@ -17,6 +17,10 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
         <link rel="icon" href="/favicon/favicon.png" />
+        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta property="og:image" content="https://fuujin4351.com/ogp.png"/>
+        <meta property="og:image:secure_url" content="https://fuujin4351.com/ogp.png"/>
       </Head>
       <Script strategy="lazyOnload">
         {" "}
