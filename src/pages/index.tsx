@@ -43,7 +43,7 @@ const Home: NextPage<Props> = ({ news }) => {
     setTimeout(() => {
       setIsLoading(false);
     }, 5000);
-  });
+  }, []);
   return (
     <>
       <Head>
