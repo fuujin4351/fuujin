@@ -11,34 +11,36 @@ type Props = {
 const Member = ({ member }: Props) => {
   const body = member.body;
   return (
-    <div className={styles.container}>
-      {body.map((member: any, index: number) => (
-        <div key={index} className={styles.card}>
-          <div className={styles.item}>
-            <img src={member.img.url} className={styles.img} alt="memimg" />
-            <div className={styles.content}>
-              <h1>{member.name}</h1>
-              <p>
-                <span>{member.cont1}</span>
-                <br />
-                {member.desc1}
-                <br />
-                <span>{member.cont2}</span>
-                <br />
-                {member.desc2}
-                <br />
-                <span>{member.cont3}</span>
-                <br />
-                {member.desc3}
-                <br />
-                <span>ひとこと</span>
-                <br />
-                {member.comment}
-              </p>
+    <div className={styles.section}>
+      <div className={styles.container}>
+        {body.map((member: any, index: number) => (
+          <div key={index} className={styles.card}>
+            <div className={styles.item}>
+              <img src={member.img.url} className={styles.img} alt="memimg" />
+              <div className={styles.content}>
+                <h1>{member.name}</h1>
+                <p>
+                  <span>{member.cont1}</span>
+                  <br />
+                  {member.desc1}
+                  <br />
+                  <span>{member.cont2}</span>
+                  <br />
+                  {member.desc2}
+                  <br />
+                  <span>{member.cont3}</span>
+                  <br />
+                  {member.desc3}
+                  <br />
+                  <span>ひとこと</span>
+                  <br />
+                  {member.comment}
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "@/styles/layout/TopPage.module.scss";
@@ -21,10 +21,12 @@ type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 const headData = {
   title: "千葉工業大学よさこいソーラン風神部 | あふれんばかりの風神魂",
-  description: "千葉工業大学のよさこいソーランサークル、風神部の公式サイトです。風神部の活動やイベント情報、サークル紹介などを掲載しています。",
-  keywords: "千葉工業大学, よさこい, ソーラン, 風神部, 風神魂, 風神, cit, サークル, 大学, よさこいソーラン, サークル活動, サークル紹介, サークル勧誘, サークル募集, サークルイベント, サークルイベント情報, サークルイベント告知, サークルイベント開催, サークルイベント開催情報, サークルイベント開催告知",
-  ogUrl: "https://fuujin4351"
-}
+  description:
+    "千葉工業大学のよさこいソーランサークル、風神部の公式サイトです。風神部の活動やイベント情報、サークル紹介などを掲載しています。",
+  keywords:
+    "千葉工業大学, よさこい, ソーラン, 風神部, 風神魂, 風神, cit, サークル, 大学, よさこいソーラン, サークル活動, サークル紹介, サークル勧誘, サークル募集, サークルイベント, サークルイベント情報, サークルイベント告知, サークルイベント開催, サークルイベント開催情報, サークルイベント開催告知",
+  ogUrl: "https://fuujin4351",
+};
 
 export const getStaticProps: GetStaticProps = async () => {
   const data = await client.get({ endpoint: "news" });
@@ -35,31 +37,28 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 const Home: NextPage<Props> = ({ news }) => {
-  
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-    }, 10000);
-  }, [isLoading])
+    }, 5000);
+  });
   return (
     <>
       <Head>
-        <meta name="viewport" content="width=device-width,initial-scale=1"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
         <title>{headData.title}</title>
         <meta name="description" content={headData.description} />
-        <meta name="keywords" content={headData.keywords}/>
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content={headData.title}/>
-        <meta property="og:description" content={headData.description}/>
+        <meta name="keywords" content={headData.keywords} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={headData.title} />
+        <meta property="og:description" content={headData.description} />
         <meta property="og:url" content={headData.ogUrl} />
       </Head>
 
       <div className={styles.top}>
-        {isLoading && (
-            <Loading />
-        )}
+        {isLoading && <Loading />}
         <Header />
         <main>
           <div className={styles.container}>

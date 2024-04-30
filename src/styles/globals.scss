@@ -1,12 +1,12 @@
 @use "sass:math";
-@import './mixin.scss';
+@import "./mixin.scss";
 
 // colors
-$wh: #FFFFFF;
-$bk: #1F2329;
-$blue: #0968E4;
-$red: #BA1C22;
-$gray: rgba(31, 35, 41, .7);
+$wh: #ffffff;
+$bk: #1f2329;
+$blue: #0968e4;
+$red: #ba1c22;
+$gray: rgba(31, 35, 41, 0.7);
 
 // font-family, font-weight
 $noto: "noto-sans-cjk-jp", sans-serif;
@@ -16,287 +16,285 @@ $bold: 700;
 
 // opneing
 .--fadeIn {
-    animation-name: fadeInAnime;
-    animation-duration: .5s;
-    animation-delay: 8s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
-    opacity: 1;
+  animation-name: fadeInAnime;
+  animation-duration: 0.5s;
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  opacity: 1;
 }
 @keyframes fadeInAnime {
-    from {
-      opacity: 1;
-    }
-  
-    to {
-      opacity: 0;
-    }
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
 }
 
 // swiper
 #mv .swiper {
-    .swiper-slide {
-        opacity: 0.5; // 非アクティブなスライドの透明度を下げる
-        transition: opacity 1s; // スライドの切り替わりにフェード効果を適用する
-    }
-    .swiper-slide-active {
-        opacity: 1; // アクティブなスライドの透明度を上げる
-        .slider-img {
-            transition-delay: 0s;
-            @include pc {
-                transform: scale(1.05);
-            }
-            @include sp {
-                transform: translateX(-50%);
-            }
-        }
-    }
-    .swiper-slide-prev,
-    .swiper-slide-next {
-        opacity: 0.5; // 前のスライドと次のスライドの透明度を下げる
-    }
+  .swiper-slide {
+    opacity: 0.5; // 非アクティブなスライドの透明度を下げる
+    transition: opacity 1s; // スライドの切り替わりにフェード効果を適用する
+  }
+  .swiper-slide-active {
+    opacity: 1; // アクティブなスライドの透明度を上げる
     .slider-img {
-        transform-origin: center;
-        transition: transform 10s;
-        @include sp {
-            transform: translateX(-50%);
-        }
+      transition-delay: 0s;
+      @include pc {
+        transform: scale(1.05);
+      }
+      @include sp {
+        transform: translateX(-50%);
+      }
     }
+  }
+  .swiper-slide-prev,
+  .swiper-slide-next {
+    opacity: 0.5; // 前のスライドと次のスライドの透明度を下げる
+  }
+  .slider-img {
+    transform-origin: center;
+    transition: transform 10s;
+    @include sp {
+      transform: translateX(-50%);
+    }
+  }
 }
 #enbu .swiper {
-    padding-bottom: 4rem;
-    .swiper-pagination {
-        position: absolute;
-        z-index: 1;
-        bottom: 0rem;
-        height: max-content;
-        margin: auto;
+  padding-bottom: 4rem;
+  .swiper-pagination {
+    position: absolute;
+    z-index: 1;
+    bottom: 0rem;
+    height: max-content;
+    margin: auto;
+  }
+  .swiper-pagination-bullet {
+    &-active {
+      background-color: $bk;
     }
-    .swiper-pagination-bullet {
-        &-active {
-            background-color: $bk;
-        }
-    }
+  }
 
-    .swiper-slide {
-        transition: scale 1.5s; // スライドの切り替わりにフェード効果を適用する
-        scale: .8; 
+  .swiper-slide {
+    transition: scale 1.5s; // スライドの切り替わりにフェード効果を適用する
+    scale: 0.8;
+  }
+  .swiper-slide-active {
+    scale: 1;
+  }
+  .swiper-slide-prev,
+  .swiper-slide-next {
+    scale: 0.8; // 前のスライドと次のスライドの透明度を下げる
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: $bk;
+    width: 4rem;
+    height: 4rem;
+    font-size: 2rem;
+    transition: all 0.4s;
+    @include pc {
+      &:hover {
+        color: $red;
+        scale: 1.1;
+      }
     }
-    .swiper-slide-active {
-        scale: 1;
+    @include sp {
+      scale: 0.7;
     }
-    .swiper-slide-prev,
-    .swiper-slide-next {
-        scale: .8; // 前のスライドと次のスライドの透明度を下げる
+  }
+  .swiper-button-prev {
+    left: 20.5%;
+    @include sp {
+      left: 4%;
     }
-    .swiper-button-prev,
-    .swiper-button-next {
-        color: $bk;
-        width: 4rem;
-        height: 4rem;
-        font-size: 2rem;
-        transition: all .4s;
-        @include pc {
-            &:hover {
-                color: $red;
-                scale: 1.1;
-            }
-        }
-        @include sp {
-            scale: .7;
-        }
+  }
+  .swiper-button-next {
+    right: 20.5%;
+    @include sp {
+      right: 4%;
     }
-    .swiper-button-prev {
-        left: 20.5%;
-        @include sp {
-            left: 4%;
-        }
-    }
-    .swiper-button-next {
-        right: 20.5%;
-        @include sp {
-            right: 4%;
-        }
-    }
+  }
 }
 #sns {
-    iframe {
-        width: 100% !important;
-        height: 40rem;
-    }
+  iframe {
+    width: 100% !important;
+    height: 40rem;
+  }
 }
 
 // font
 // header, footer
 .c-header-title {
-    font-size: 1.4rem;
-    font-weight: $bold;
-    font-family: $noto;
-    color: $bk;
-    @include sp {
-        font-size: 1.3rem;
-    }
+  font-size: 1.4rem;
+  font-weight: $bold;
+  font-family: $noto;
+  color: $bk;
+  @include sp {
+    font-size: 1.3rem;
+  }
 }
 .c-header-link {
-    font-size: 2rem;
-    font-weight: $bold;
-    font-family: $noto;
-    color: $bk;
-    transition: all .3s;
-    @include pc {
-        &:hover {
-            color: $red;
-        }
+  font-size: 2rem;
+  font-weight: $bold;
+  font-family: $noto;
+  color: $bk;
+  transition: all 0.3s;
+  @include pc {
+    &:hover {
+      color: $red;
     }
+  }
 }
 .c-footer-title {
-    font-size: 2rem;
-    font-weight: $bold;
-    font-family: $noto;
-    color: $bk;
-    @include sp {
-        font-size: 1.6rem;
-    }
+  font-size: 2rem;
+  font-weight: $bold;
+  font-family: $noto;
+  color: $bk;
+  @include sp {
+    font-size: 1.6rem;
+  }
 }
 .c-footer-link {
-    font-size: 1.5rem;
-    font-weight: $bold;
-    font-family: $noto;
-    color: $bk;
-    transition: all .3s;
-    &:hover {
-        color: $red;
-    }
-    @include sp {
-        font-size: 1.2rem;
-    }
+  font-size: 1.5rem;
+  font-weight: $bold;
+  font-family: $noto;
+  color: $bk;
+  transition: all 0.3s;
+  &:hover {
+    color: $red;
+  }
+  @include sp {
+    font-size: 1.2rem;
+  }
 }
 .c-footer-copy {
-    font-size: 1rem;
-    font-weight: $medium;
-    font-family: $noto;
-    color: $bk;
+  font-size: 1rem;
+  font-weight: $medium;
+  font-family: $noto;
+  color: $bk;
 }
 // 各ページ
 .c-mv-title {
-    font-size: clamp(6rem, 9.72vw,500rem);
-    font-weight: $bold;
-    font-family: $noto;
-    line-height: 1.5;
-    letter-spacing: 2%;
-    color: $bk;
-    @include sp {
-        font-size: clamp(5rem, calc(60 / 375 * 100vw), 9rem);
-    }
+  font-size: clamp(6rem, 9.72vw, 500rem);
+  font-weight: $bold;
+  font-family: $noto;
+  line-height: 1.5;
+  letter-spacing: 2%;
+  color: $bk;
+  @include sp {
+    font-size: clamp(5rem, calc(60 / 375 * 100vw), 9rem);
+  }
 }
 .c-message-text {
-    font-size: clamp(1.5rem, 1.25vw, 1.8rem);
-    font-weight: $medium;
-    font-family: $noto;
-    line-height: 1.5;
-    letter-spacing: 0.5%;
-    color: $bk;
-    @include sp {
-        font-size: clamp(1.2rem, calc(14 / 375 * 100vw), 1.7rem);
-    }
+  font-size: clamp(1.5rem, 1.25vw, 1.8rem);
+  font-weight: $medium;
+  font-family: $noto;
+  line-height: 1.5;
+  letter-spacing: 0.5%;
+  color: $bk;
+  @include sp {
+    font-size: clamp(1.2rem, calc(14 / 375 * 100vw), 1.7rem);
+  }
 }
 .c-message-title {
-    font-size: clamp(3rem, 2.98vw, 4.3rem);
-    font-weight: $bold;
-    font-family: $noto;
-    line-height: 100%;
-    color: $bk;
-    -ms-writing-mode: tb-rl;
-    writing-mode: vertical-rl;
-    @include sp {
-        font-size: clamp(2.5rem, calc(30 / 375 * 100vw), 4.3rem);
-    }
+  font-size: clamp(3rem, 2.98vw, 4.3rem);
+  font-weight: $bold;
+  font-family: $noto;
+  line-height: 100%;
+  color: $bk;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+  @include sp {
+    font-size: clamp(2.5rem, calc(30 / 375 * 100vw), 4.3rem);
+  }
 }
 .c-news-date {
-    font-size: 1rem;
-    font-weight: $medium;
-    font-family: $noto;
-    line-height: 100%;
-    letter-spacing: 2%;
-    color: $bk;
-    @include sp {
-        font-size: 0.9rem;
-    }
+  font-size: 1rem;
+  font-weight: $medium;
+  font-family: $noto;
+  line-height: 100%;
+  letter-spacing: 2%;
+  color: $bk;
+  @include sp {
+    font-size: 0.9rem;
+  }
 }
 .c-news-category {
-    font-size: 1.2rem;
-    font-weight: $medium;
-    font-family: $noto;
-    line-height: 100%;
-    letter-spacing: 2%;
-    color: $bk;
-    @include sp {
-        font-size: 1.1rem;
-    }
+  font-size: 1.2rem;
+  font-weight: $medium;
+  font-family: $noto;
+  line-height: 100%;
+  letter-spacing: 2%;
+  color: $bk;
+  @include sp {
+    font-size: 1.1rem;
+  }
 }
 .c-news-text {
-    font-size: clamp(1.4rem, calc(16 / 1440 * 100vw), 1.6rem);
-    font-weight: $regular;
-    font-family: $noto;
-    line-height: 100%;
-    letter-spacing: 2%;
-    color: $bk;
-    @include sp {
-        font-size: clamp(1.2rem, calc(12 / 375 * 100vw), 1.5rem);
-    }
+  font-size: clamp(1.4rem, calc(16 / 1440 * 100vw), 1.6rem);
+  font-weight: $regular;
+  font-family: $noto;
+  line-height: 100%;
+  letter-spacing: 2%;
+  color: $bk;
+  @include sp {
+    font-size: clamp(1.2rem, calc(12 / 375 * 100vw), 1.5rem);
+  }
 }
 .c-sns-title {
-    font-size: clamp(2.4rem, calc(24 / 1440 * 100vw), 2.4rem);
-    font-weight: $bold;
-    font-family: $noto;
-    line-height: 1.2;
-    letter-spacing: 2%;
-    color: $bk;
-    @include sp {
-        font-size: clamp(1.8rem, calc(18 / 375 * 100vw), 2rem);
-    }
+  font-size: clamp(2.4rem, calc(24 / 1440 * 100vw), 2.4rem);
+  font-weight: $bold;
+  font-family: $noto;
+  line-height: 1.2;
+  letter-spacing: 2%;
+  color: $bk;
+  @include sp {
+    font-size: clamp(1.8rem, calc(18 / 375 * 100vw), 2rem);
+  }
 }
-
 
 // components
 .c-title2 {
-    font-size: clamp(3rem, calc(37 / 1440 * 100vw), 3.7rem);
-    font-weight: $bold;
-    font-family: $noto;
-    line-height: 1.2;
-    letter-spacing: 2%;
-    color: $bk;
-    @include sp {
-        font-size: clamp(2.5rem, calc(25 / 375 * 100vw), 3rem);
-    }
+  font-size: clamp(3rem, calc(37 / 1440 * 100vw), 3.7rem);
+  font-weight: $bold;
+  font-family: $noto;
+  line-height: 1.2;
+  letter-spacing: 2%;
+  color: $bk;
+  @include sp {
+    font-size: clamp(2.5rem, calc(25 / 375 * 100vw), 3rem);
+  }
 }
 .c-body1 {
-    font-size: 1.4rem;
-    font-weight: $medium;
-    font-family: $noto;
-    line-height: 1.5;
-    letter-spacing: 2%;
-    @include sp {
-        font-size: 1.2rem;
-    }
-
+  font-size: 1.4rem;
+  font-weight: $medium;
+  font-family: $noto;
+  line-height: 1.5;
+  letter-spacing: 2%;
+  @include sp {
+    font-size: 1.2rem;
+  }
 }
 .c-button-text {
-    font-size: clamp(1.2rem, calc(16 / 1440 * 100vw), 1.6rem);
-    font-weight: $medium;
-    font-family: $noto;
-    letter-spacing: 2%;
-    color: $wh;
+  font-size: clamp(1.2rem, calc(16 / 1440 * 100vw), 1.6rem);
+  font-weight: $medium;
+  font-family: $noto;
+  letter-spacing: 2%;
+  color: $wh;
 }
 .--wh {
-    color: $wh;
+  color: $wh;
 }
 .--bk {
-    color: $bk;
+  color: $bk;
 }
 .--blue {
-    color: $blue;
+  color: $blue;
 }
 .--gray {
-    color: $gray;
+  color: $gray;
 }
