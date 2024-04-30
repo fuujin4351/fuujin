@@ -1,110 +1,110 @@
 @import "../../globals.scss";
 .container {
-    width: 100%;
-    max-width: 144rem;
-    margin: 0 auto;
-    position: relative;
-    padding-top: 12rem;
-    display: flex;
-    gap: clamp(2rem, 9vw, 13rem);
-    @include sp {
-        flex-direction: column;
-        padding-top: 8rem;
-    }
+  width: 100%;
+  max-width: 144rem;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 12rem;
+  display: flex;
+  gap: clamp(2rem, 9vw, 13rem);
+  @include sp {
+    flex-direction: column;
+    padding-top: 8rem;
+  }
 }
 .leftCircle,
 .leftCircleSmall {
-    position: absolute;
-    bottom: -20%;
-    left: -20%;
-    width: 60rem;
-    height: 60rem;
-    border-radius: 50%;
-    opacity: 0.2;
-    z-index: 1;
-    border: 2.5rem solid $red;
-    @include sp {
-        width: 50rem;
-        height: 50rem;
-        border: 3rem solid $red;
-        top: -40%;
-        left: -50%;
-    }
+  position: absolute;
+  bottom: -20%;
+  left: -20%;
+  width: 60rem;
+  height: 60rem;
+  border-radius: 50%;
+  opacity: 0.2;
+  z-index: 1;
+  border: 2.5rem solid $red;
+  @include sp {
+    width: 50rem;
+    height: 50rem;
+    border: 3rem solid $red;
+    top: -40%;
+    left: -50%;
+  }
 }
 .leftCircleSmall {
-    border: 2rem solid $red;
-    scale: .85;
+  border: 2rem solid $red;
+  scale: 0.85;
 }
 .contentArea {
-    width: 59%;
-    padding: 2.5rem 2rem 0;
-    position: relative;
-    display: flex;
-    align-items: center;
-    @include sp {
-        width: 100%;
-        padding: 0 min(calc(15 / 375 * 100vw), 1.5rem);
-        max-width: 55 - 2 - 2rem;
-        margin: 0 auto;
-    }
+  width: 59%;
+  padding: 2.5rem 2rem 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  @include sp {
+    width: 100%;
+    padding: 0 min(calc(15 / 375 * 100vw), 1.5rem);
+    max-width: 55 - 2 - 2rem;
+    margin: 0 auto;
+  }
 }
 .titleArea {
-    position: absolute;
-    top: 2.5rem;
-    @include pc {
-        right: 0;
-    }
-    @include sp {
-        top: -4rem;
-        left: 1.5rem;
-    }
+  position: absolute;
+  top: 2.5rem;
+  @include pc {
+    right: 0;
+  }
+  @include sp {
+    top: -4rem;
+    left: 1.5rem;
+  }
 }
 
 .line {
-    display: inline-block;
-    background: url('/top/message/text-bg.png');
-    background-size: 100% 200%;
-    background-position-y: 100%;
-    background-repeat: no-repeat;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
+  display: inline-block;
+  background: url("/top/message/text-bg.webp");
+  background-size: 100% 200%;
+  background-position-y: 100%;
+  background-repeat: no-repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .title {
-    display: inline-flex;
+  display: inline-flex;
 }
 .mass {
-    margin-top: min(9.7vw, -14rem);
-    margin-right: min(4.86vw, 7rem);
-    @include sp {
-        margin-top: max(calc(-140 / 375 * 100vw), -18rem);
-        margin-right: min(calc(40 / 375 * 100vw), 6rem);
-    }
+  margin-top: min(9.7vw, -14rem);
+  margin-right: min(4.86vw, 7rem);
+  @include sp {
+    margin-top: max(calc(-140 / 375 * 100vw), -18rem);
+    margin-right: min(calc(40 / 375 * 100vw), 6rem);
+  }
 }
 .textArea {
-    padding-top: 25rem;
-    margin-left: min(13vw, 19rem);
-    @include sp {
-        padding-top: 0;
-        margin-left: auto;
-    }
+  padding-top: 25rem;
+  margin-left: min(13vw, 19rem);
+  @include sp {
+    padding-top: 0;
+    margin-left: auto;
+  }
 }
 .red {
-    color: $red;
+  color: $red;
 }
 .imgArea {
-    width: 41%;
-    aspect-ratio: 535.75 / 804.61;
-    background: url('/top/message/1.png');
-    background-size: 110%;
-    background-position: center;
-    background-repeat: no-repeat;
+  width: 41%;
+  aspect-ratio: 535.75 / 804.61;
+  background: url("/top/message/1.webp");
+  background-size: 110%;
+  background-position: center;
+  background-repeat: no-repeat;
 
-    @include sp {
-        border-radius: .4rem;
-        width: 100%;
-        max-width: 50rem;
-        margin: 0 auto;
-    }
+  @include sp {
+    border-radius: 0.4rem;
+    width: 100%;
+    max-width: 50rem;
+    margin: 0 auto;
+  }
 }

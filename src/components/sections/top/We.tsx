@@ -22,8 +22,8 @@ function We() {
     const list4 = listRef4.current;
     const span1 = spanRef1.current;
     const span2 = spanRef2.current;
-    const mm = gsap.matchMedia()
-    
+    const mm = gsap.matchMedia();
+
     gsap.set([list1, list3], { y: -100 });
     gsap.set([list2, list4], { y: 100 });
     const bgScrollTrigger = {
@@ -41,7 +41,7 @@ function We() {
       scrollTrigger: bgScrollTrigger,
     });
 
-    mm.add('(min-width: 769px)', () => {
+    mm.add("(min-width: 769px)", () => {
       gsap.set(span1, { x: 100 });
       gsap.set(span2, { x: -100 });
 
@@ -62,7 +62,7 @@ function We() {
       });
     });
 
-    mm.add('(max-width: 768px)', () => {
+    mm.add("(max-width: 768px)", () => {
       gsap.set(span1, { x: 100 });
       gsap.set(span2, { x: -100 });
 
@@ -101,7 +101,7 @@ function We() {
           <ul className={styles.list} ref={listRef1}>
             <li className={styles.item}>
               <Image
-                src="/top/we/1.png"
+                src="/top/we/1.webp"
                 className={styles.img}
                 alt=""
                 width={700}
@@ -110,7 +110,7 @@ function We() {
             </li>
             <li className={styles.item}>
               <Image
-                src="/top/we/2.png"
+                src="/top/we/2.webp"
                 className={styles.img}
                 alt=""
                 width={700}
@@ -119,7 +119,7 @@ function We() {
             </li>
             <li className={styles.item}>
               <Image
-                src="/top/we/3.png"
+                src="/top/we/3.webp"
                 className={styles.img}
                 alt=""
                 width={700}
@@ -130,7 +130,7 @@ function We() {
           <ul className={styles.list} ref={listRef2}>
             <li className={styles.item}>
               <Image
-                src="/top/we/4.png"
+                src="/top/we/4.webp"
                 className={styles.img}
                 alt=""
                 width={700}
@@ -139,7 +139,7 @@ function We() {
             </li>
             <li className={styles.item}>
               <Image
-                src="/top/we/5.png"
+                src="/top/we/5.webp"
                 className={styles.img}
                 alt=""
                 width={700}
@@ -148,7 +148,7 @@ function We() {
             </li>
             <li className={styles.item}>
               <Image
-                src="/top/we/6.png"
+                src="/top/we/6.webp"
                 className={styles.img}
                 alt=""
                 width={700}
@@ -159,7 +159,7 @@ function We() {
           <ul className={styles.list} ref={listRef3}>
             <li className={styles.item}>
               <Image
-                src="/top/we/7.png"
+                src="/top/we/7.webp"
                 className={styles.img}
                 alt=""
                 width={700}
@@ -168,7 +168,7 @@ function We() {
             </li>
             <li className={styles.item}>
               <Image
-                src="/top/we/8.png"
+                src="/top/we/8.webp"
                 className={styles.img}
                 alt=""
                 width={700}
@@ -177,7 +177,7 @@ function We() {
             </li>
             <li className={styles.item}>
               <Image
-                src="/top/we/9.png"
+                src="/top/we/9.webp"
                 className={styles.img}
                 alt=""
                 width={700}
@@ -188,7 +188,7 @@ function We() {
           <ul className={styles.list} ref={listRef4}>
             <li className={styles.item}>
               <Image
-                src="/top/we/10.png"
+                src="/top/we/10.webp"
                 className={styles.img}
                 alt=""
                 width={700}
@@ -197,7 +197,7 @@ function We() {
             </li>
             <li className={styles.item}>
               <Image
-                src="/top/we/11.png"
+                src="/top/we/11.webp"
                 className={styles.img}
                 alt=""
                 width={700}
@@ -206,7 +206,7 @@ function We() {
             </li>
             <li className={styles.item}>
               <Image
-                src="/top/we/12.png"
+                src="/top/we/12.webp"
                 className={styles.img}
                 alt=""
                 width={700}

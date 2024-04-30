@@ -14,14 +14,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { enbuList } from "@/components/sections/enbu/enbuData";
 
-const images = [
-  "/top/enbu/1.png",
-  "/top/enbu/1.png",
-  "/top/enbu/1.png",
-  "/top/enbu/1.png",
-  "/top/enbu/1.png",
-];
-
 function Enbu() {
   const slideSettings = {
     0: {

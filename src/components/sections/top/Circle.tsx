@@ -36,7 +36,7 @@ function Circle() {
     <div className={styles.container} ref={containerRef}>
       <div className={styles.sticky} ref={stickyRef}>
         <Image
-          src="/top/circle/1.png"
+          src="/top/circle/1.webp"
           ref={circleImgRef}
           className={styles.imgArea}
           alt=""
