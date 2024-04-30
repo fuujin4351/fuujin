@@ -1,6 +1,6 @@
 import { client } from "../../../libs/client";
 import Link from "next/link";
-import styles from "@/styles/sections/member/Member.module.scss";
+import styles from "@/styles/layout/TopPage.module.scss";
 import Hero from "@/components/sections/hero/Hero";
 import Member from "@/components/sections/member/Member";
 import Header from "@/components/layout/Header";
@@ -35,7 +35,7 @@ const MemberList: NextPage<Props> = ({ member }) => {
   return (
     <>
       <Header />
-      <section className={styles.section}>
+      <section className={styles.container}>
         <Hero />
         <Member member={member} />
         <div className={styles.btn}>
