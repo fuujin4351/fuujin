@@ -17,8 +17,8 @@ $bold: 700;
 // opneing
 .--fadeIn {
     animation-name: fadeInAnime;
-    animation-duration: 0.5s;
-    animation-delay: 3s;
+    animation-duration: .5s;
+    animation-delay: 3.5s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-out;
     opacity: 1;
@@ -43,9 +43,11 @@ $bold: 700;
         opacity: 1; // アクティブなスライドの透明度を上げる
         .slider-img {
             transition-delay: 0s;
-            transform: scale(1.05);
+            @include pc {
+                transform: scale(1.05);
+            }
             @include sp {
-                transform: scale(1.05) translateX(-50%);
+                transform: translateX(-50%);
             }
         }
     }
@@ -141,8 +143,10 @@ $bold: 700;
     font-family: $noto;
     color: $bk;
     transition: all .3s;
-    &:hover {
-        color: $red;
+    @include pc {
+        &:hover {
+            color: $red;
+        }
     }
 }
 .c-footer-title {

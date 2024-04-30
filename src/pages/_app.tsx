@@ -21,6 +21,10 @@ export default function App({ Component, pageProps }: AppProps) {
           href="/favicon/apple-touch-icon.png"
         ></link>
         <link rel="icon" href="/favicon/favicon.png"></link>
+        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta property="og:image" content="/ogp.png"/>
+        <meta property="og:image:secure_url" content="/ogp.png"/>
         <script
           dangerouslySetInnerHTML={{
             __html: `

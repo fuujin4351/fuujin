@@ -22,52 +22,6 @@
     flex-direction: column;
     gap: 4rem;
 }
-.leftCircle,
-.leftCircleSmall {
-    position: absolute;
-    top: -50%;
-    left: -40%;
-    width: 100rem;
-    height: 100rem;
-    border-radius: 50%;
-    opacity: 0.2;
-    z-index: 1;
-    border: 5rem solid $red;
-    @include sp {
-        width: 50rem;
-        height: 50rem;
-        border: 3rem solid $red;
-        top: -40%;
-        left: -50%;
-    }
-}
-.leftCircleSmall {
-    border: 4rem solid $red;
-    scale: .82;
-}
-.rightCircle,
-.rightCircleSmall {
-    position: absolute;
-    bottom: -50%;
-    right: -20%;
-    width: 70rem;
-    height: 70rem;
-    border-radius: 50%;
-    opacity: 0.2;
-    z-index: 1;
-    border: 5rem solid $blue;
-    @include sp {
-        width: 40rem;
-        height: 40rem;
-        border: 3rem solid $blue;
-        bottom: -35%;
-        right: -40%;
-    }
-}
-.rightCircleSmall {
-    border: 4.5rem solid $blue;
-    scale: .75;
-}
 .imgArea {
     width: 20rem;
     height: 20rem;

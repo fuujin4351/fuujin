@@ -26,7 +26,7 @@ function HeaderNav({ active } : { active: boolean }) {
             <div className={styles.container}>
                 <ul className={styles.list}>
                     <li className={styles.item + ' c-header-link'}>
-                        <Link href="about">私たちについて</Link>
+                        <Link href="/about">私たちについて</Link>
                     </li>
                     <li className={styles.item + ' c-header-link'}>
                         <Link href="/enbu">演舞紹介</Link>

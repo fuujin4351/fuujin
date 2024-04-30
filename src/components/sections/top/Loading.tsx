@@ -6,14 +6,6 @@ function Loading() {
   return (
     <div className={styles.container + ' --fadeIn'}>
         <div className={styles.bg}>
-            <div className={styles.leftCircle}>
-            </div>
-            <div className={styles.leftCircleSmall}>
-            </div>
-            <div className={styles.rightCircle}>
-            </div>
-            <div className={styles.rightCircleSmall}>
-            </div>
             <div className={styles.imgArea}>
                 <Image
                     src="/common/logo.png"

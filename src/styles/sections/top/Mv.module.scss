@@ -4,7 +4,7 @@
     aspect-ratio: 1440 / 900;
     position: relative;
     @include sp {
-        max-height: 100dvh;
+        max-height: 100vh;
         aspect-ratio: 375 / 667;
     }
 }
