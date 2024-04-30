@@ -16,6 +16,7 @@ import { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 import { client } from "../../libs/client";
 import { useEffect, useState } from "react";
 import Loading from "@/components/sections/top/Loading";
+import { useRouter } from "next/router";
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
@@ -35,13 +36,26 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 const Home: NextPage<Props> = ({ news }) => {
+  const router = useRouter();
+  
   const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 5000);
-  }, [])
+    const handleStart = (url: string) => {
+      url !== router.pathname ? setIsLoading(true) : setIsLoading(false);
+    };
+    const handleComplete = () => setIsLoading(false);
+
+    router.events.on('routeChangeStart', handleStart);
+    router.events.on('routeChangeComplete', handleComplete);
+    router.events.on('routeChangeError', handleComplete);
+
+    return () => {
+      router.events.off('routeChangeStart', handleStart);
+      router.events.off('routeChangeComplete', handleComplete);
+      router.events.off('routeChangeError', handleComplete);
+    };
+  }, [router]);
   return (
     <>
       <Head>
