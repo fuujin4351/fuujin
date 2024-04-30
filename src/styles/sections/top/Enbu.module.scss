@@ -81,12 +81,15 @@
 }
 .buttonArea {
     margin-top: 6.4rem;
+    display: flex;
+    justify-content: center;
     @include sp {
         margin-top: 4rem;
     }
 }
 .button {
-    display: block;
+    display: inline-flex;
+    align-items: center;
     padding: 2rem 3rem;
     background-color: $red;
     width: fit-content;
@@ -96,4 +99,7 @@
     @include sp {
         padding: 1.4rem 2rem;
     }
+}
+.arrow {
+    transform: rotate(-35deg);
 }

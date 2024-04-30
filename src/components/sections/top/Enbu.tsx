@@ -78,9 +78,10 @@ function Enbu() {
           ))}
         </Swiper>
         <div className={styles.buttonArea}>
-          <a className={styles.button + " c-button-text --wh"} href="">
-            他の演舞が気になったらyoutubeをチャンネル登録！
-          </a>
+          <Link className={styles.button + " c-button-text --wh"} href="/enbu">
+            <span className={styles.buttonText}>歴代演舞はこちら！</span>
+            <span className={styles.arrow}>→</span>
+          </Link>
         </div>
       </div>
     </section>
