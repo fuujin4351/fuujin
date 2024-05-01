@@ -9,14 +9,14 @@
 .container {
   display: grid;
   gap: 10px;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   justify-content: center;
   justify-items: center;
   height: 100%;
   align-items: center;
 }
 .card {
-  width: 350px;
+  width: 320px;
   height: 500px;
   margin: 50px;
   box-shadow: 5px 5px 20px black;
@@ -25,7 +25,7 @@
   position: relative;
 }
 .img {
-  width: 350px;
+  width: 320px;
   height: 500px;
   border-radius: 10px;
   transition: all 0.5s;
@@ -33,7 +33,7 @@
 }
 .content {
   height: 100px;
-  width: 350px;
+  width: 320px;
   padding: 6px;
   box-sizing: border-box;
   position: absolute;

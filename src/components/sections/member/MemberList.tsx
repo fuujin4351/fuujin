@@ -41,12 +41,13 @@ const MemberList = ({ members }: Props) => {
           <div className={styles.card} key={postIndex}>
             <Link href={`/member/${post.id}`} className={styles.link}>
               <img src={post.eyecatch.url} alt="" className={styles.image} />
+
+              <div className={styles.content}>
+                <p className={styles.title}>{post.title}</p>
+                <p className={styles.tag}>{post.tag}</p>
+                <p className={styles.tag}>{post.comment}</p>
+              </div>
             </Link>
-            <div className={styles.content}>
-              <p className={styles.title}>{post.title}</p>
-              <p className={styles.tag}>{post.tag}</p>
-              <p className={styles.tag}>{post.comment}</p>
-            </div>
           </div>
         ))}
         <Link
