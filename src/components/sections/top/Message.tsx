@@ -74,21 +74,43 @@ function Message() {
       line12,
     ];
 
-    gsap.utils.toArray(lines).forEach((line: any, index) => {
-      gsap.fromTo(
-        line,
-        { backgroundPositionY: "100%", y: 10 },
-        {
-          backgroundPositionY: "-23%",
-          y: 0,
-          scrollTrigger: {
-            trigger: line,
-            start: "top 92%",
-            end: "+=" + line1Height,
-            scrub: true,
-          },
-        }
-      );
+    const mm = gsap.matchMedia();
+
+    mm.add("(min-width: 769px)", () => {
+      gsap.utils.toArray(lines).forEach((line: any, index) => {
+        gsap.fromTo(
+          line,
+          { backgroundPositionY: "100%", y: 10 },
+          {
+            backgroundPositionY: "-23%",
+            y: 0,
+            scrollTrigger: {
+              trigger: line,
+              start: "top 92%",
+              end: "+=" + line1Height,
+              scrub: true,
+            },
+          }
+        );
+      });
+    });
+    mm.add("(max-width: 768px)", () => {
+      gsap.utils.toArray(lines).forEach((line: any, index) => {
+        gsap.fromTo(
+          line,
+          { backgroundPositionY: "100%", y: 10 },
+          {
+            backgroundPositionY: "-20%",
+            y: 0,
+            scrollTrigger: {
+              trigger: line,
+              start: "top 70%",
+              end: "+=" + line1Height,
+              scrub: true,
+            },
+          }
+        );
+      });
     });
     gsap.fromTo(
       img,
