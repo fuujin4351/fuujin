@@ -18,6 +18,7 @@
 .title {
   font-size: 4.5rem; // フォントサイズ
   font-weight: 700; // フォントウェイト
+  font-family: $noto;
   min-height: 6rem; // この値はh1の行の高さに合わせて調整
   display: block; // h1タグのデフォルトはこれが通常ですが、明示的に設定
   width: 100%; // 全幅を取るように設定
@@ -81,6 +82,7 @@
 .text {
   font-size: 2.4rem;
   font-weight: 700;
+  font-family: $noto;
   margin-bottom: 1.6rem;
 }
 
@@ -112,6 +114,7 @@
 .description {
   font-size: 1.6rem; // フォントサイズを指定
   line-height: 4.4rem; // 行間を指定
+  font-family: $noto;
   font-weight: bold; // フォントウェイトを指定
 }
 

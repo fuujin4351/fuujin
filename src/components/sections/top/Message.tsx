@@ -103,7 +103,7 @@ function Message() {
         },
       }
     );
-  });
+  }, []);
   return (
     <section className={styles.container} id="message">
       <div className={styles.leftCircle}></div>

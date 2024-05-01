@@ -27,6 +27,7 @@
   border-radius: 3px;
   padding: 15px 20px;
   font-size: 16px;
+  font-family: $noto;
   color: #333;
   flex-grow: 1;
   word-break: break-all;
@@ -38,6 +39,7 @@
   width: 250px;
   font-weight: bold;
   font-size: 16px;
+  font-family: $noto;
 }
 .email {
   display: flex;
@@ -45,6 +47,7 @@
   width: 250px;
   font-weight: bold;
   font-size: 16px;
+  font-family: $noto;
 }
 .message {
   display: flex;
@@ -52,6 +55,7 @@
   width: 250px;
   font-weight: bold;
   font-size: 16px;
+  font-family: $noto;
 }
 .recaptcha {
   display: flex;
@@ -73,6 +77,7 @@
   color: #fff;
   font-weight: bold;
   background-color: #166ab5;
+  font-family: $noto;
 }
 
 @media (max-width: 768px) {
