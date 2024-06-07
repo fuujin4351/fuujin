@@ -101,7 +101,7 @@ function We() {
           <ul className={styles.list} ref={listRef1}>
             <li className={styles.item}>
               <Image
-                src="/top/we/1.webp"
+                src="/top/wow/1.webp"
                 className={styles.img}
                 alt=""
                 width={700}
@@ -110,7 +110,7 @@ function We() {
             </li>
             <li className={styles.item}>
               <Image
-                src="/top/we/2.webp"
+                src="/top/wow/2.webp"
                 className={styles.img}
                 alt=""
                 width={700}
@@ -119,7 +119,7 @@ function We() {
             </li>
             <li className={styles.item}>
               <Image
-                src="/top/we/3.webp"
+                src="/top/wow/3.webp"
                 className={styles.img}
                 alt=""
                 width={700}
@@ -130,7 +130,7 @@ function We() {
           <ul className={styles.list} ref={listRef2}>
             <li className={styles.item}>
               <Image
-                src="/top/we/4.webp"
+                src="/top/wow/4.webp"
                 className={styles.img}
                 alt=""
                 width={700}
@@ -139,7 +139,7 @@ function We() {
             </li>
             <li className={styles.item}>
               <Image
-                src="/top/we/5.webp"
+                src="/top/wow/5.webp"
                 className={styles.img}
                 alt=""
                 width={700}
@@ -148,7 +148,7 @@ function We() {
             </li>
             <li className={styles.item}>
               <Image
-                src="/top/we/6.webp"
+                src="/top/wow/6.webp"
                 className={styles.img}
                 alt=""
                 width={700}
@@ -159,7 +159,7 @@ function We() {
           <ul className={styles.list} ref={listRef3}>
             <li className={styles.item}>
               <Image
-                src="/top/we/7.webp"
+                src="/top/wow/7.webp"
                 className={styles.img}
                 alt=""
                 width={700}
@@ -168,7 +168,7 @@ function We() {
             </li>
             <li className={styles.item}>
               <Image
-                src="/top/we/8.webp"
+                src="/top/wow/8.webp"
                 className={styles.img}
                 alt=""
                 width={700}
@@ -177,7 +177,7 @@ function We() {
             </li>
             <li className={styles.item}>
               <Image
-                src="/top/we/9.webp"
+                src="/top/wow/9.webp"
                 className={styles.img}
                 alt=""
                 width={700}
@@ -188,7 +188,7 @@ function We() {
           <ul className={styles.list} ref={listRef4}>
             <li className={styles.item}>
               <Image
-                src="/top/we/10.webp"
+                src="/top/wow/10.webp"
                 className={styles.img}
                 alt=""
                 width={700}
@@ -197,7 +197,7 @@ function We() {
             </li>
             <li className={styles.item}>
               <Image
-                src="/top/we/11.webp"
+                src="/top/wow/11.webp"
                 className={styles.img}
                 alt=""
                 width={700}
@@ -206,7 +206,7 @@ function We() {
             </li>
             <li className={styles.item}>
               <Image
-                src="/top/we/12.webp"
+                src="/top/wow/12.webp"
                 className={styles.img}
                 alt=""
                 width={700}
