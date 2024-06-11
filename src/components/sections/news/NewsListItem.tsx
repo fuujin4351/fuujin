@@ -22,11 +22,7 @@ export const NewsListItem = (props: Props) => {
           {news.map((news: any, index: number) => (
             <Link href={`/news/${news.id}`}>
               <div className={styles.card}>
-                <div
-                  key={news.id}
-                  className={styles.fadeUp}
-                  style={{ animationDelay: `${index * 0.3}s` }} // 0.3秒ごとにアニメーションを開始
-                >
+                <div key={news.id}>
                   <div className={styles.img}>
                     <img
                       src={news.eye_catch.url}
