@@ -46,24 +46,5 @@ export const NewsListItem = (props: Props) => {
     </section>
   );
 };
-// type NewsItemProps = {
-//   news: News;
-// };
-
-// const NewsItem: React.FC<NewsItemProps> = ({ news }) => {
-//   return (
-//     <li key={news.id} className={styles.container}>
-//       <Link href={`/news/${news.id}`}>
-//         <img
-//           src={news.eye_catch.url}
-//           alt={news.title}
-//           width={200}
-//           height={200}
-//         />
-//         <div>{news.title}</div>
-//       </Link>
-//     </li>
-//   );
-// };
 
 export default NewsListItem;

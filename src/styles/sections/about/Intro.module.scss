@@ -1,4 +1,5 @@
 @use "../../globals.scss" as *;
+
 .container {
   width: 100%;
   max-width: 144rem;
@@ -7,9 +8,11 @@
   padding-right: min(5.5vw, 8rem);
   font-family: $noto;
 }
+
 .content {
-  display: flex; // Flexboxを利用して要素を横に並べる
-  padding: 20px; // 余白を追加
+  display: flex;
+  padding: 20px;
+  flex-wrap: wrap;
 }
 
 .titlearea {
@@ -19,24 +22,24 @@
 }
 
 .title {
-  font-size: 4.5rem; // フォントサイズ
-  font-weight: 700; // フォントウェイト
-  min-height: 6rem; // この値はh1の行の高さに合わせて調整
-  display: block; // h1タグのデフォルトはこれが通常ですが、明示的に設定
-  width: 100%; // 全幅を取るように設定
-  white-space: pre; // 改行やスペースをそのまま保持
+  font-size: 4.5rem;
+  font-weight: 700;
+  min-height: 6rem;
+  display: block;
+  width: 100%;
+  white-space: pre;
 }
 
-.visible {
-  visibility: visible; // テキストが表示されるとこのスタイルが適用される
+.redLine,
+.transparentLine {
+  height: 6px;
+  background-color: transparent;
 }
 
 .redLine {
-  width: 0;
-  height: 6px;
   background-color: $red;
-  transform-origin: left; // 左端を基準に変形
-  animation: expandLine 2s forwards; // アニメーションを2秒間で一度だけ実行
+  transform-origin: left;
+  animation: expandLine 1s forwards;
 }
 
 @keyframes expandLine {
@@ -44,43 +47,39 @@
     width: 0;
   }
   to {
-    width: 100%; // 最終的には100%の幅に
+    width: 100%;
   }
 }
 
-// 左側のテキストセクション
 .text {
-  margin-top: 20px; // 上部に余白を持たせる
-  flex: 1; // Flexbox内で均等にスペースを取る
-  padding: 20px; // パディングで内部に余白を持たせる
+  margin-top: 20px;
+  flex: 1;
+  padding: 20px;
 }
 
 .description {
-  font-size: 1.6rem; // フォントサイズを指定
-  line-height: 4.4rem; // 行間を指定
-  font-weight: bold; // フォントウェイトを指定
+  font-size: 1.6rem;
+  line-height: 4.4rem;
+  font-weight: bold;
 }
 
-// 右側の画像セクション
 .imagearea {
-  flex: 1; // Flexbox内で均等にスペースを取る
-  padding: 20px; // パディングで内部に余白を持たせる
-  display: flex; // Flexboxを利用して中身を横に並べる
-  justify-content: center; // 画像を中央に配置
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
 }
 
-// イメージスタイル指定
 .img {
-  max-width: 100%; // 画像がコンテナより大きくならないように制限
-  height: auto; // 高さは自動で調整
-  border-radius: 10px; // 角丸にする
-  object-fit: cover; // 画像をコンテナに合わせて表示
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
 }
+
 @media (max-width: 660px) {
   .content {
-    display: flex;
-    padding: 20px;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
   }
 }

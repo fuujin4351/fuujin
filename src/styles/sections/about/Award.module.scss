@@ -6,10 +6,9 @@
   margin: 0 auto;
   padding-left: min(5.5vw, 8rem);
   padding-right: min(5.5vw, 8rem);
-  max-width: 144rem;
-  margin: 0 auto;
   font-family: $noto;
 }
+
 .titlearea {
   margin: 0 30px;
   text-align: left;
@@ -17,24 +16,28 @@
 }
 
 .title {
-  font-size: 4.5rem; // フォントサイズ
-  font-weight: 700; // フォントウェイト
-  min-height: 6rem; // この値はh1の行の高さに合わせて調整
-  display: block; // h1タグのデフォルトはこれが通常ですが、明示的に設定
-  width: 100%; // 全幅を取るように設定
-  white-space: pre; // 改行やスペースをそのまま保持
+  font-size: 4.5rem;
+  font-weight: 700;
+  min-height: 6rem;
+  display: block;
+  width: 100%;
+  white-space: pre;
 }
 
 .visible {
-  visibility: visible; // テキストが表示されるとこのスタイルが適用される
+  visibility: visible;
+}
+
+.redLine,
+.transparentLine {
+  height: 6px;
+  background-color: transparent;
 }
 
 .redLine {
-  width: 0;
-  height: 6px;
   background-color: $red;
-  transform-origin: left; // 左端を基準に変形
-  animation: expandLine 2s forwards; // アニメーションを2秒間で一度だけ実行
+  transform-origin: left;
+  animation: expandLine 1s forwards;
 }
 
 @keyframes expandLine {
@@ -42,7 +45,7 @@
     width: 0;
   }
   to {
-    width: 100%; // 最終的には100%の幅に
+    width: 100%;
   }
 }
 
@@ -61,6 +64,7 @@
   padding: 1rem;
   border-bottom: 1px solid #f2f4f5;
 }
+
 .text {
   font-size: 1.6rem;
   line-height: 2.4rem;

@@ -15,7 +15,7 @@ export const getStaticPaths = async () => {
 
   const paths = data.contents.map((content: any) => `/news/${content.id}`);
 
-  console.log(paths);
+  // console.log(paths);
   return {
     paths,
     fallback: false,
