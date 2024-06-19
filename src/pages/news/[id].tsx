@@ -1,3 +1,4 @@
+import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { News } from "../../../types/news";
 import { client } from "../../../libs/client";
 import styles from "@/styles/sections/news/NewsArticle.module.scss";
@@ -10,30 +11,36 @@ type Props = {
   news: News;
 };
 
-export const getStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   const data = await client.get({ endpoint: "news" });
 
   const paths = data.contents.map((content: any) => `/news/${content.id}`);
 
-  // console.log(paths);
   return {
     paths,
     fallback: false,
   };
 };
 
-export const getStaticProps = async (context: any) => {
-  const id = context.params.id;
-  const data = await client.get({ endpoint: "news", contentId: id });
+export const getStaticProps: GetStaticProps<Props> = async (context) => {
+  const id = context.params?.id as string;
+  try {
+    const data = await client.get({ endpoint: "news", contentId: id });
 
-  return {
-    props: {
-      news: data,
-    },
-  };
+    return {
+      props: {
+        news: data,
+      },
+    };
+  } catch (error) {
+    console.error("Error fetching news data:", error);
+    return {
+      notFound: true,
+    };
+  }
 };
 
-export default function NewsPage({ news }: Props) {
+const NewsPage: NextPage<Props> = ({ news }) => {
   return (
     <>
       <Header />
@@ -58,7 +65,7 @@ export default function NewsPage({ news }: Props) {
           </div>
 
           <div>
-            <Link href="/news">
+            <Link href="/news" passHref>
               <button className={styles.button}>一覧に戻る</button>
             </Link>
           </div>
@@ -67,4 +74,6 @@ export default function NewsPage({ news }: Props) {
       <Footer />
     </>
   );
-}
+};
+
+export default NewsPage;

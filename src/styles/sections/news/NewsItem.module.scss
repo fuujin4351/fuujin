@@ -8,10 +8,12 @@
   max-width: 1024px;
   margin: 0 auto;
 }
+
 .title {
   margin-top: 40px;
   margin-bottom: 40px;
   text-align: center;
+
   h2 {
     font-size: 40px;
     font-weight: bold;
@@ -20,6 +22,7 @@
     color: $bk;
   }
 }
+
 .cardlist {
   display: grid;
   gap: 17px;
@@ -29,31 +32,30 @@
   height: 100%;
   align-items: center;
 }
+
 .card {
   width: 330px;
   height: 340px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.16);
   border-radius: 10px;
 }
+
 .img {
-  width: 330px;
+  width: 100%;
   height: 200px;
   border-radius: 10px 10px 0 0;
   object-fit: cover;
 }
-.date {
-  margin-top: 5px;
-  font-size: 16px;
+
+.date,
+.tag,
+.Article_title {
   font-family: $noto;
-}
-.tag {
   font-size: 16px;
-  font-family: $noto;
 }
+
 .Article_title {
   font-size: 24px;
-  font-family: $noto;
-  position: absolute;
   margin-bottom: 30px;
   position: relative;
 }

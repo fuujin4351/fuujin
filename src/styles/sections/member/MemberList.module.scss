@@ -8,15 +8,16 @@
   justify-content: center;
   font-family: $noto;
 }
+
 .container {
   text-align: center;
   padding: 0;
 }
+
 .title {
   font-size: 3rem;
   font-weight: $bold;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin: 40px 0;
   text-align: center;
   line-height: 1.5;
   color: $bk;
@@ -32,6 +33,7 @@
   margin: 20px;
   gap: 20px;
 }
+
 .link {
   margin: 20px;
 }
@@ -39,11 +41,11 @@
 .image {
   width: 400px;
   height: 200px;
-
   border-radius: 20px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.16);
   object-fit: cover;
 }
+
 .content {
   margin-top: 10px;
 }
@@ -55,6 +57,7 @@
   letter-spacing: 0.5%;
   color: $bk;
 }
+
 .tag {
   font-size: clamp(1.5rem, 1.25vw, 1.8rem);
   font-weight: $medium;
@@ -82,21 +85,26 @@
   .container {
     width: 680px;
   }
+
   .card {
     gap: 10px;
   }
+
   .image {
     width: 230px;
     height: 120px;
   }
 }
+
 @media screen and (max-width: 430px) {
   .container {
     width: 330px;
   }
+
   .card {
     gap: 0px;
   }
+
   .image {
     width: 100px;
     height: 80px;

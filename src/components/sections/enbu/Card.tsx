@@ -15,26 +15,17 @@ const Card = () => {
         (entries) => {
           entries.forEach((entry) => {
             if (entry.target instanceof HTMLElement) {
-              const startColor = entry.target.dataset.startcolor;
-              const endColor = entry.target.dataset.endcolor;
+              const startColor = entry.target.dataset.startcolor!;
+              const endColor = entry.target.dataset.endcolor!;
               if (entry.isIntersecting) {
-                gsap.to(entry.target, {
-                  background: `linear-gradient(135deg, ${startColor}, ${endColor})`,
-                  duration: 0.5, // アニメーションの長さ（秒）
-                  ease: "power2.inOut", // イージング効果
-                });
+                animateCard(entry.target, startColor, endColor);
               } else {
-                // ビューポートから外れたら初期色に戻す
-                gsap.to(entry.target, {
-                  background: "linear-gradient(135deg, #fff, #fff)",
-                  duration: 1,
-                  ease: "power2.inOut",
-                });
+                resetCard(entry.target);
               }
             }
           });
         },
-        { threshold: 0.4 }
+        { threshold: 0.4 } // この部分変更で、表示されるタイミングを調整
       );
 
       cards.forEach((card) => observer.observe(card));
@@ -44,6 +35,26 @@ const Card = () => {
       };
     }
   }, []);
+
+  const animateCard = (
+    element: HTMLElement,
+    startColor: string,
+    endColor: string
+  ) => {
+    gsap.to(element, {
+      background: `linear-gradient(135deg, ${startColor}, ${endColor})`,
+      duration: 0.5, // アニメーションの速さ
+      ease: "power2.inOut", // アニメーションのイージング
+    });
+  };
+
+  const resetCard = (element: HTMLElement) => {
+    gsap.to(element, {
+      background: "linear-gradient(135deg, #fff, #fff)",
+      duration: 0.8,
+      ease: "power2.inOut",
+    });
+  };
 
   return (
     <div ref={cardsContainer} className={styles.container}>
@@ -88,29 +99,3 @@ const Card = () => {
 };
 
 export default Card;
-
-{
-  /* <div className={styles.card}>
-          <div className={styles.titlearea}>
-            <h1 className={styles.title}>2024年度演舞作品名</h1>
-          </div>
-          <div className={styles.content}>
-            <div className={styles.imgArea}>
-              <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/z-nhbvANOrI?si=Db2a1ofYqYOzFrde"
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-                className={styles.img}
-              ></iframe>
-            </div>
-            <div className={styles.textArea}>
-              <p className={styles.text}>作品説明</p>
-            </div>
-          </div>
-        </div> */
-}

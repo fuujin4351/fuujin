@@ -5,13 +5,24 @@ $img-height-mobile: 200px;
 $img-width: 100%;
 $img-object-fit: cover;
 
+.container {
+  position: relative;
+  width: 100%;
+  height: $img-height-desktop;
+
+  @media screen and (max-width: 768px) {
+    height: $img-height-mobile;
+  }
+}
+
 .img1,
 .img2,
 .img3,
 .img4,
 .img5 {
+  position: absolute;
   width: $img-width;
-  height: $img-height-desktop;
+  height: 100%;
   object-fit: $img-object-fit;
 }
 
@@ -35,6 +46,6 @@ $img-object-fit: cover;
   .img3,
   .img4,
   .img5 {
-    height: $img-height-mobile;
+    height: 100%;
   }
 }

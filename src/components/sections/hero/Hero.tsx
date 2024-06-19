@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "@/styles/hero/Hero.module.scss";
-import { useState, useEffect } from "react";
 
-function Hero() {
+const Hero: React.FC = () => {
   const images = [
     { src: "1.webp", styleClass: styles.img1 },
     { src: "2.webp", styleClass: styles.img2 },
@@ -28,14 +27,20 @@ function Hero() {
   }, []);
 
   return (
-    <div className={styles.container}>
-      <img
-        src={`/hero/${currentImage.src}`}
-        alt="Random Image"
-        className={currentImage.styleClass}
-      />
-    </div>
+    <section>
+      <div className={styles.container}>
+        {currentImage.src && (
+          <Image
+            src={`/hero/${currentImage.src}`}
+            alt="Random Image"
+            className={currentImage.styleClass}
+            layout="fill"
+            objectFit="cover"
+          />
+        )}
+      </div>
+    </section>
   );
-}
+};
 
 export default Hero;

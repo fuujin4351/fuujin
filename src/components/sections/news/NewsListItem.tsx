@@ -7,9 +7,7 @@ type Props = {
   news: News[];
 };
 
-export const NewsListItem = (props: Props) => {
-  const { news } = props;
-
+export const NewsListItem: React.FC<Props> = ({ news }) => {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
@@ -19,24 +17,22 @@ export const NewsListItem = (props: Props) => {
         </div>
         {/* 下の段 */}
         <div className={styles.cardlist}>
-          {news.map((news: any, index: number) => (
-            <Link href={`/news/${news.id}`}>
+          {news.map((newsItem) => (
+            <Link href={`/news/${newsItem.id}`} key={newsItem.id}>
               <div className={styles.card}>
-                <div key={news.id}>
-                  <div className={styles.img}>
-                    <img
-                      src={news.eye_catch.url}
-                      alt={news.title}
-                      className={styles.img}
-                    />
-                  </div>
-                  <div>
-                    <p className={styles.date}>
-                      {new Date(news.publishedAt).toLocaleDateString()}
-                    </p>
-                    <p className={styles.tag}>{news.tag}</p>
-                    <p className={styles.Article_title}>{news.title}</p>
-                  </div>
+                <div className={styles.img}>
+                  <img
+                    src={newsItem.eye_catch.url}
+                    alt={newsItem.title}
+                    className={styles.img}
+                  />
+                </div>
+                <div>
+                  <p className={styles.date}>
+                    {new Date(newsItem.publishedAt).toLocaleDateString()}
+                  </p>
+                  <p className={styles.tag}>{newsItem.tag}</p>
+                  <p className={styles.Article_title}>{newsItem.title}</p>
                 </div>
               </div>
             </Link>
