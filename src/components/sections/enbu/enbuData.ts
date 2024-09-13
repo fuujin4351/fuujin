@@ -1,5 +1,16 @@
 export const enbuList = [
   {
+    year: "2024",
+    name: "奏向",
+    theme:
+      "十七曲目のオリジナル曲の\nテーマは「音」\n此処に奏でるは紡いだ音の物語",
+    description: "今、貴方に届けよう この想いを音に乗せて",
+    url: "https://www.youtube.com/embed/q8ieux_JNRQ?si=2LogIXMr22_XzWJH",
+    img: "/enbu/2024.webp",
+    startColor: "#ffffff", // 開始色
+    endColor: "#b44c97", // 終了色
+  },
+  {
     year: "2023",
     name: "輝燦",
     theme:
