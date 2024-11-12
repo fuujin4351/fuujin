@@ -82,7 +82,7 @@ function We() {
         scrollTrigger: textScrollTrigger,
       });
     });
-  });
+  }, []);
   return (
     <section className={styles.we} id="we">
       <div className={styles.container}>

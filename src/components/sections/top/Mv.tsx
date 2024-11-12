@@ -59,7 +59,7 @@ function Mv() {
         },
       });
     });
-  });
+  }, []);
 
   return (
     <section className={styles.container} ref={containerRef} id="mv">

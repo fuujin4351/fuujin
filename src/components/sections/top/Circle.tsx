@@ -30,7 +30,7 @@ function Circle() {
         },
       }
     );
-  });
+  }, []);
 
   return (
     <div className={styles.container} ref={containerRef}>

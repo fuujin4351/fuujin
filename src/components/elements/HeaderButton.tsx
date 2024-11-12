@@ -87,7 +87,7 @@ function HeaderButton({
         }
       });
     });
-  });
+  }, [active]);
   return (
     <button
       className={styles.button}

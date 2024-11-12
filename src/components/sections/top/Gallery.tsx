@@ -72,7 +72,7 @@ function Gallery() {
         );
       }
     });
-  });
+  }, []);
 
   return (
     <div className={styles.container}>
