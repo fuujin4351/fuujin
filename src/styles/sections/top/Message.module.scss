@@ -1,4 +1,5 @@
-@import "../../globals.scss";
+@use "../../globals.scss" as *;
+@use "../../mixin" as *;
 .container {
   width: 100%;
   max-width: 144rem;

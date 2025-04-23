@@ -1,5 +1,5 @@
 @use "sass:math";
-@import "./mixin.scss";
+@use "./mixin" as *;
 
 // colors
 $wh: #ffffff;

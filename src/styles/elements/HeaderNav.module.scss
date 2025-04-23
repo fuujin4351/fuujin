@@ -1,99 +1,100 @@
-@import '../globals.scss';
+@use "../globals.scss" as *;
+@use "../mixin" as *;
 .nav {
-    position: fixed;
-    top: 0;
-    left: 0%;
-    width: 100%;
-    height: 100dvh;
-    background-color: $wh;
-    z-index: 4;
-    opacity: 0;
-    visibility: hidden;
-    transition: all .2s;
-    clip-path: circle(60%);
+  position: fixed;
+  top: 0;
+  left: 0%;
+  width: 100%;
+  height: 100dvh;
+  background-color: $wh;
+  z-index: 4;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s;
+  clip-path: circle(60%);
 }
 .activeNav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100dvh;
-    background-color: $wh;
-    z-index: 4;
-    opacity: 1;
-    visibility: visible;
-    transition: all 0.2s;
-    clip-path: circle(100%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100dvh;
+  background-color: $wh;
+  z-index: 4;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.2s;
+  clip-path: circle(100%);
 }
 .bg {
-    width: 100%;
-    height: 100%;
-    background: url('/bg.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: repeat;
-    position: relative;
+  width: 100%;
+  height: 100%;
+  background: url("/bg.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  position: relative;
 }
 .leftCircle,
 .leftCircleSmall {
-    position: absolute;
-    top: -50%;
-    left: -40%;
-    width: 100rem;
-    height: 100rem;
-    border-radius: 50%;
-    opacity: 0.2;
-    z-index: 1;
-    border: 5rem solid $red;
-    @include sp {
-        width: 50rem;
-        height: 50rem;
-        border: 3rem solid $red;
-        top: -40%;
-        left: -50%;
-    }
+  position: absolute;
+  top: -50%;
+  left: -40%;
+  width: 100rem;
+  height: 100rem;
+  border-radius: 50%;
+  opacity: 0.2;
+  z-index: 1;
+  border: 5rem solid $red;
+  @include sp {
+    width: 50rem;
+    height: 50rem;
+    border: 3rem solid $red;
+    top: -40%;
+    left: -50%;
+  }
 }
 .leftCircleSmall {
-    border: 4rem solid $red;
-    scale: .82;
+  border: 4rem solid $red;
+  scale: 0.82;
 }
 .rightCircle,
 .rightCircleSmall {
-    position: absolute;
-    bottom: -50%;
-    right: -20%;
-    width: 70rem;
-    height: 70rem;
-    border-radius: 50%;
-    opacity: 0.2;
-    z-index: 1;
-    border: 5rem solid $blue;
-    @include sp {
-        width: 40rem;
-        height: 40rem;
-        border: 3rem solid $blue;
-        bottom: -35%;
-        right: -40%;
-    }
+  position: absolute;
+  bottom: -50%;
+  right: -20%;
+  width: 70rem;
+  height: 70rem;
+  border-radius: 50%;
+  opacity: 0.2;
+  z-index: 1;
+  border: 5rem solid $blue;
+  @include sp {
+    width: 40rem;
+    height: 40rem;
+    border: 3rem solid $blue;
+    bottom: -35%;
+    right: -40%;
+  }
 }
 .rightCircleSmall {
-    border: 4.5rem solid $blue;
-    scale: .75;
+  border: 4.5rem solid $blue;
+  scale: 0.75;
 }
 .container {
-    width: 100%;
-    height: 100%;
-    padding-top: 1.6 + 1.6rem;
-    padding-left: min(calc(80 / 1440 * 100vw), 8rem);
-    padding-right: min(calc(80 / 1440 * 100vw), 8rem);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-top: 1.6 + 1.6rem;
+  padding-left: min(calc(80 / 1440 * 100vw), 8rem);
+  padding-right: min(calc(80 / 1440 * 100vw), 8rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5rem;
 }

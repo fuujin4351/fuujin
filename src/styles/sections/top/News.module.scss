@@ -1,4 +1,5 @@
-@import "../../globals.scss";
+@use "../../globals.scss" as *;
+@use "../../mixin" as *;
 
 .container {
   padding-left: min(5.5vw, 8rem);
@@ -28,13 +29,13 @@
 .item {
   width: calc(3 / 10 * 100%);
   @include sp {
-    width: calc(50% - .6rem);
+    width: calc(50% - 0.6rem);
   }
 }
 .imgArea {
   width: 100%;
   aspect-ratio: 16 / 9;
-  border-radius: .4rem;
+  border-radius: 0.4rem;
   overflow: hidden;
 }
 .img {
