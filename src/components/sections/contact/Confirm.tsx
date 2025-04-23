@@ -66,7 +66,7 @@ const Confirm = () => {
 
       <div className={styles.recaptcha}>
         <ReCAPTCHA
-          sitekey="6Le1BL0pAAAAANerLWj04hkUnHvGuXDnOyWe8qis"
+          sitekey={process.env.RECAPTCHA_SITE_KEY || ""}
           onChange={handleChange}
         />
       </div>
