@@ -36,9 +36,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1.6rem;
   @include sp {
     width: 100%;
-    height: 44rem;
+    gap: 1.2rem;
   }
 }
 .snsTitle {
@@ -46,5 +47,20 @@
   text-align: center;
   @include sp {
     margin-bottom: 1.6rem;
+  }
+}
+
+.youtubeTitle {
+  opacity: 0.8;
+  transition: all 0.3s ease-in-out;
+  @include pc {
+    &:hover {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+  }
+
+  @include sp {
+    opacity: 1;
   }
 }

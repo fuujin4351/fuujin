@@ -19,7 +19,8 @@ $img-object-fit: cover;
 .img2,
 .img3,
 .img4,
-.img5 {
+.img5,
+.img10 {
   position: absolute;
   width: $img-width;
   height: 100%;
@@ -33,11 +34,13 @@ $img-object-fit: cover;
   object-position: 50% 25%;
 }
 .img3,
+.img4,
 .img5 {
   object-position: center;
 }
-.img4 {
-  object-position: top;
+
+.img10 {
+  object-position: bottom;
 }
 
 @media screen and (max-width: 768px) {

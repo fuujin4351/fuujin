@@ -12,10 +12,7 @@ const images = [
   { src: "7.webp", styleClass: styles.img5 },
   { src: "8.webp", styleClass: styles.img5 },
   { src: "9.webp", styleClass: styles.img5 },
-  { src: "10.webp", styleClass: styles.img5 },
-  { src: "11.webp", styleClass: styles.img5 },
-  { src: "12.webp", styleClass: styles.img5 },
-  { src: "13.webp", styleClass: styles.img5 },
+  { src: "10.webp", styleClass: styles.img10 },
 ];
 
 const preloadImages = () => {
