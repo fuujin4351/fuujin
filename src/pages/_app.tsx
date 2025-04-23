@@ -19,8 +19,21 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon/favicon.png" />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <meta property="og:image" content="https://fuujin4351.com/ogp.png"/>
-        <meta property="og:image:secure_url" content="https://fuujin4351.com/ogp.png"/>
+        <meta property="og:image" content="https://fuujin4351.com/ogp.png" />
+        <meta
+          property="og:image:secure_url"
+          content="https://fuujin4351.com/ogp.png"
+        />
+        {/* メタタイトル */}
+        <meta
+          name="title"
+          content="千葉工業大学よさこいソーラン風神部 | あふれんばかりの風神魂"
+        />
+        {/* メタディスクリプション */}
+        <meta
+          name="description"
+          content="千葉工業大学のよさこいソーランサークル、風神部の公式サイトです。風神部の活動やイベント情報、サークル紹介などを掲載しています。"
+        />
       </Head>
       <Script strategy="lazyOnload">
         {" "}
