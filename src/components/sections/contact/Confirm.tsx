@@ -7,6 +7,7 @@ const Confirm = () => {
   const router = useRouter();
   const { name, email, message } = router.query;
   const [captchaValue, setCaptchaValue] = useState<string | null>(null);
+  const resiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
 
   const handleBack = () => {
     router.push({
@@ -25,7 +26,7 @@ const Confirm = () => {
       return;
     }
 
-    await fetch("/.netlify/functions/contact", {
+    await fetch("/api/contact", {
       method: "POST",
       headers: {
         Accept: "application/json, text/plain,",
@@ -66,7 +67,7 @@ const Confirm = () => {
 
       <div className={styles.recaptcha}>
         <ReCAPTCHA
-          sitekey={process.env.RECAPTCHA_SITE_KEY || ""}
+          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
           onChange={handleChange}
         />
       </div>

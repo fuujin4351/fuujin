@@ -2,3 +2,9 @@
   command   = "npm run build"
   publish   = "dist"
   functions = "netlify/functions"
+
+  [[redirects]]
+  from = "/api/contact"
+  to   = "/.netlify/functions/sendEn"
+  status = 200
+  methods = ["POST"]
