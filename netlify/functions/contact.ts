@@ -1,16 +1,21 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import type { Handler, HandlerEvent, HandlerContext } from "@netlify/functions";
 import nodemailer from "nodemailer";
 
-export default async function sendGmail(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  if (req.method !== "POST") {
-    return res.status(405).json({ message: "Method Not Allowed" });
+export const handler: Handler = async (
+  event: HandlerEvent,
+  context: HandlerContext
+) => {
+  if (event.httpMethod !== "POST") {
+    return {
+      statusCode: 405,
+      body: JSON.stringify({ message: "Method Not Allowed" }),
+    };
   }
 
+  const body = JSON.parse(event.body || "{}");
+
   // reCAPTCHA の検証を先に行います
-  const recaptchaResponse = req.body.recaptchaResponse;
+  const recaptchaResponse = body.recaptchaResponse;
   const secretKey = process.env.RECAPTCHA_SECRET_KEY;
 
   const recaptchaVerifyResponse = await fetch(
@@ -27,7 +32,10 @@ export default async function sendGmail(
   const recaptchaVerifyData = await recaptchaVerifyResponse.json();
 
   if (!recaptchaVerifyData.success) {
-    return res.status(400).json({ message: "reCAPTCHA verification failed." });
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ message: "reCAPTCHA verification failed." }),
+    };
   }
 
   // reCAPTCHA検証が成功したら、メールを送信する
@@ -42,24 +50,28 @@ export default async function sendGmail(
 
   // 管理人が受け取るメール
   const toHostMailData = {
-    from: req.body.email,
+    from: body.email,
     to: process.env.EMAIL_ADDRESS,
-    subject: `お問い合わせ ${req.body.name}様より`,
-    text: `${req.body.message} Send from ${req.body.email}`,
+    subject: `お問い合わせ ${body.name}様より`,
+    text: `${body.message} Send from ${body.email}`,
     html: `
-      <p>名前: ${req.body.name}</p>
-      <p>メッセージ内容: ${req.body.message}</p>
-      <p>メールアドレス: ${req.body.email}</p>
+      <p>名前: ${body.name}</p>
+      <p>メッセージ内容: ${body.message}</p>
+      <p>メールアドレス: ${body.email}</p>
     `,
   };
 
-  transporter.sendMail(toHostMailData, function (err, info) {
-    if (err) {
-      console.error(err);
-      return res.status(500).json({ message: "Failed to send email." });
-    } else {
-      console.log(info);
-      return res.status(200).json({ message: "Email sent successfully!" });
-    }
-  });
-}
+  try {
+    await transporter.sendMail(toHostMailData);
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ message: "Email sent successfully!" }),
+    };
+  } catch (err) {
+    console.error(err);
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ message: "Failed to send email." }),
+    };
+  }
+};
