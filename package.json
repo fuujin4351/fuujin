@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@netlify/functions": "^3.1.2",
     "bootstrap": "^5.3.3",
     "dompurify": "^3.1.0",
     "gsap": "^3.12.5",

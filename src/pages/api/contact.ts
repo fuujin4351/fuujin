@@ -1,65 +1,104 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import type { Handler, HandlerEvent, HandlerContext } from "@netlify/functions";
 import nodemailer from "nodemailer";
 
-export default async function sendGmail(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  if (req.method !== "POST") {
-    return res.status(405).json({ message: "Method Not Allowed" });
+export const handler: Handler = async (
+  event: HandlerEvent,
+  context: HandlerContext
+) => {
+  // Only accept POST
+  if (event.httpMethod !== "POST") {
+    return {
+      statusCode: 405,
+      body: JSON.stringify({ message: "Method Not Allowed" }),
+    };
   }
 
-  // reCAPTCHA の検証を先に行います
-  const recaptchaResponse = req.body.recaptchaResponse;
-  const secretKey = process.env.RECAPTCHA_SECRET_KEY;
+  // Parse request body
+  let body: {
+    name: string;
+    email: string;
+    message: string;
+    recaptchaResponse: string;
+  };
+  try {
+    body = JSON.parse(event.body || "");
+  } catch {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ message: "Invalid JSON" }),
+    };
+  }
 
-  const recaptchaVerifyResponse = await fetch(
+  // Verify reCAPTCHA
+  const secretKey = process.env.RECAPTCHA_SECRET_KEY;
+  if (!secretKey) {
+    console.error("Missing RECAPTCHA_SECRET_KEY");
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ message: "Server misconfiguration" }),
+    };
+  }
+
+  const recaptchaRes = await fetch(
     "https://www.google.com/recaptcha/api/siteverify",
     {
       method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body: `secret=${secretKey}&response=${recaptchaResponse}`,
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: `secret=${encodeURIComponent(
+        secretKey
+      )}&response=${encodeURIComponent(body.recaptchaResponse)}`,
     }
   );
-
-  const recaptchaVerifyData = await recaptchaVerifyResponse.json();
-
-  if (!recaptchaVerifyData.success) {
-    return res.status(400).json({ message: "reCAPTCHA verification failed." });
+  const recaptchaData = (await recaptchaRes.json()) as { success: boolean };
+  if (!recaptchaData.success) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ message: "reCAPTCHA verification failed" }),
+    };
   }
 
-  // reCAPTCHA検証が成功したら、メールを送信する
+  // Send email
+  const emailAddress = process.env.EMAIL_ADDRESS;
+  const emailPassword = process.env.EMAIL_PASSWORD;
+  if (!emailAddress || !emailPassword) {
+    console.error("Missing email credentials");
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ message: "Server misconfiguration" }),
+    };
+  }
+
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 587,
     auth: {
-      user: process.env.EMAIL_ADDRESS,
-      pass: process.env.EMAIL_PASSWORD,
+      user: emailAddress,
+      pass: emailPassword,
     },
   });
 
-  // 管理人が受け取るメール
-  const toHostMailData = {
-    from: req.body.email,
-    to: process.env.EMAIL_ADDRESS,
-    subject: `お問い合わせ ${req.body.name}様より`,
-    text: `${req.body.message} Send from ${req.body.email}`,
+  const mailOptions = {
+    from: body.email,
+    to: emailAddress,
+    subject: `お問い合わせ from ${body.name}`,
     html: `
-      <p>名前: ${req.body.name}</p>
-      <p>メッセージ内容: ${req.body.message}</p>
-      <p>メールアドレス: ${req.body.email}</p>
+      <p>名前: ${body.name}</p>
+      <p>メールアドレス: ${body.email}</p>
+      <p>メッセージ: ${body.message}</p>
     `,
   };
 
-  transporter.sendMail(toHostMailData, function (err, info) {
-    if (err) {
-      console.error(err);
-      return res.status(500).json({ message: "Failed to send email." });
-    } else {
-      console.log(info);
-      return res.status(200).json({ message: "Email sent successfully!" });
-    }
-  });
-}
+  try {
+    await transporter.sendMail(mailOptions);
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ message: "Email sent successfully" }),
+    };
+  } catch (error) {
+    console.error("Failed to send email:", error);
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ message: "Failed to send email" }),
+    };
+  }
+};
