@@ -37,13 +37,13 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 const Home: NextPage<Props> = ({ news }) => {
-  const [isLoading, setIsLoading] = useState(true);
-  useEffect(() => {
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 5000);
-  }, []);
+  // const [isLoading, setIsLoading] = useState(true);
+  // useEffect(() => {
+  //   setIsLoading(true);
+  //   setTimeout(() => {
+  //     setIsLoading(false);
+  //   }, 2000);
+  // }, []);
   return (
     <>
       <Head>
@@ -58,7 +58,7 @@ const Home: NextPage<Props> = ({ news }) => {
       </Head>
 
       <div className={styles.top}>
-        {isLoading && <Loading />}
+        {/* {isLoading && <Loading />} */}
         <Header />
         <main>
           <div className={styles.container}>

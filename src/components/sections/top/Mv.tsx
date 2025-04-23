@@ -1,12 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import styles from "@/styles/sections/top/Mv.module.scss";
-import SwiperCore, {
-  Autoplay,
-  Navigation,
-  Pagination,
-  EffectFade,
-} from "swiper/modules";
+import { Autoplay, Navigation, Pagination, EffectFade } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";

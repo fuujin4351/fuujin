@@ -1,105 +1,106 @@
-@import "../../globals.scss";
+@use "../../globals.scss" as *;
+@use "../../mixin" as *;
 
 .container {
-    padding-top: 12rem;
-    padding-bottom: 12rem;
-    position: relative;
-    overflow: hidden;
-    @include sp {
-        padding-top: 8rem;
-        padding-bottom: 8rem;
-    }
+  padding-top: 12rem;
+  padding-bottom: 12rem;
+  position: relative;
+  overflow: hidden;
+  @include sp {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
 }
 .leftCircle,
 .leftCircleSmall {
-    position: absolute;
-    bottom: 20%;
-    right: -20%;
-    width: 80rem;
-    height: 80rem;
-    border-radius: 50%;
-    opacity: 0.2;
-    z-index: 1;
-    border: 3rem solid $red;
-    z-index: 1;
-    @include sp {
-        width: 40rem;
-        height: 40rem;
-        border: 2rem solid $red;
-        bottom: 60%;
-        right: -50%;
-    }
+  position: absolute;
+  bottom: 20%;
+  right: -20%;
+  width: 80rem;
+  height: 80rem;
+  border-radius: 50%;
+  opacity: 0.2;
+  z-index: 1;
+  border: 3rem solid $red;
+  z-index: 1;
+  @include sp {
+    width: 40rem;
+    height: 40rem;
+    border: 2rem solid $red;
+    bottom: 60%;
+    right: -50%;
+  }
 }
 .leftCircleSmall {
-    border: 1.5rem solid $red;
-    scale: .85;
+  border: 1.5rem solid $red;
+  scale: 0.85;
 }
 .textArea {
-    width: 62rem;
-    margin: 0 auto;
-    padding-bottom: 6.4rem;
-    z-index: 2;
-    @include sp {
-        width: 100%;
-        padding-bottom: 4rem;
-        padding-left: min(calc(20 / 375 * 100vw), 2rem);
-        padding-right: min(calc(20 / 375 * 100vw), 2rem);
-    }
+  width: 62rem;
+  margin: 0 auto;
+  padding-bottom: 6.4rem;
+  z-index: 2;
+  @include sp {
+    width: 100%;
+    padding-bottom: 4rem;
+    padding-left: min(calc(20 / 375 * 100vw), 2rem);
+    padding-right: min(calc(20 / 375 * 100vw), 2rem);
+  }
 }
 .title,
 .text {
-    text-align: center;
+  text-align: center;
 }
 
 .text {
-    margin-top: 2.4rem;
+  margin-top: 2.4rem;
 }
 .slider {
-    margin-top: 6.4rem;
-    overflow: hidden;
-    z-index: 2;
-    @include sp {
-        margin-top: 2.4rem;
-    }
+  margin-top: 6.4rem;
+  overflow: hidden;
+  z-index: 2;
+  @include sp {
+    margin-top: 2.4rem;
+  }
 }
 .sliderWrapper {
-    display: flex;
-    justify-content: center;
-    gap: 4rem;
-    @include sp {
-        gap: 2rem;
-    }
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  @include sp {
+    gap: 2rem;
+  }
 }
 .imgArea {
-    width: 70rem;
-    aspect-ratio: 70 / 47.25;
+  width: 70rem;
+  aspect-ratio: 70 / 47.25;
 }
 .img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .buttonArea {
-    margin-top: 6.4rem;
-    display: flex;
-    justify-content: center;
-    @include sp {
-        margin-top: 4rem;
-    }
+  margin-top: 6.4rem;
+  display: flex;
+  justify-content: center;
+  @include sp {
+    margin-top: 4rem;
+  }
 }
 .button {
-    display: inline-flex;
-    align-items: center;
-    padding: 2rem 3rem;
-    background-color: $red;
-    width: fit-content;
-    margin: 0 auto;
-    border-radius: 5rem;
-    border: solid 0.2rem $bk;
-    @include sp {
-        padding: 1.4rem 2rem;
-    }
+  display: inline-flex;
+  align-items: center;
+  padding: 2rem 3rem;
+  background-color: $red;
+  width: fit-content;
+  margin: 0 auto;
+  border-radius: 5rem;
+  border: solid 0.2rem $bk;
+  @include sp {
+    padding: 1.4rem 2rem;
+  }
 }
 .arrow {
-    transform: rotate(-35deg);
+  transform: rotate(-35deg);
 }
