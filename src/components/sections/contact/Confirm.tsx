@@ -26,7 +26,7 @@ const Confirm = () => {
       return;
     }
 
-    await fetch("/api/contact", {
+    await fetch("/.netlify/functions/contact", {
       method: "POST",
       headers: {
         Accept: "application/json, text/plain,",
