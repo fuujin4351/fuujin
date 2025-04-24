@@ -1,4 +1,5 @@
 @use "../../globals.scss" as *;
+@use "../../mixin.scss" as *;
 
 .container {
   width: 100%;
@@ -88,6 +89,10 @@
   font-weight: 700;
   font-family: $noto;
   margin-bottom: 1.6rem;
+  @include sp {
+    font-size: 2rem;
+    text-wrap: nowrap;
+  }
 }
 
 .undcontent {
