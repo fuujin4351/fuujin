@@ -1,6 +1,7 @@
 import React from "react";
 import { MemList } from "../../../../types/member"; // 型の確認
 import Link from "next/link";
+import Image from "next/image";
 import styles from "@/styles/sections/member/MemberList.module.scss";
 
 type Props = {
@@ -17,7 +18,9 @@ const MemberList = ({ members }: Props) => {
             <div className={styles.card} key={post.id}>
               <Link href={`/member/${post.id}`} passHref>
                 <div className={styles.link}>
-                  <img
+                  <Image
+                    width={300}
+                    height={300}
                     src={post.eyecatch.url}
                     alt={post.title}
                     className={styles.image}

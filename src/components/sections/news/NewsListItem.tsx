@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { News } from "../../../../types/news"; // This line is added to import the News type
 import styles from "@/styles/sections/news/NewsItem.module.scss";
+import Image from "next/image";
 
 type Props = {
   news: News[];
@@ -21,7 +22,9 @@ export const NewsListItem: React.FC<Props> = ({ news }) => {
             <Link href={`/news/${newsItem.id}`} key={newsItem.id}>
               <div className={styles.card}>
                 <div className={styles.img}>
-                  <img
+                  <Image
+                    width={300}
+                    height={300}
                     src={newsItem.eye_catch.url}
                     alt={newsItem.title}
                     className={styles.img}

@@ -6,6 +6,7 @@ import Hero from "@/components/sections/hero/Hero";
 import Link from "next/link";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import Image from "next/image";
 
 type Props = {
   news: News;
@@ -53,7 +54,13 @@ const NewsPage: NextPage<Props> = ({ news }) => {
 
           <div>
             <div className={styles.imgarea}>
-              <img src={news.eye_catch.url} alt="news" className={styles.img} />
+              <Image
+                width={600}
+                height={400}
+                src={news.eye_catch.url}
+                alt="news"
+                className={styles.img}
+              />
             </div>
 
             <div className={styles.textarea}>

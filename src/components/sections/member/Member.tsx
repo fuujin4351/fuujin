@@ -1,5 +1,6 @@
 import { MemList } from "../../../../types/member";
 import styles from "@/styles/sections/member/Member.module.scss";
+import Image from "next/image";
 
 type MemberBody = {
   img: {
@@ -30,7 +31,9 @@ const Member = ({ member }: Props) => {
         {body.map((member, index) => (
           <div key={index} className={styles.card}>
             <div className={styles.item}>
-              <img
+              <Image
+                width={300}
+                height={300}
                 src={member.img.url}
                 className={styles.img}
                 alt={`${member.name}`}

@@ -21,7 +21,9 @@ export const TopNews = (props: Props) => {
               <li className={styles.item} key={index}>
                 <Link href={`/news/${news.id}`}>
                   <div className={styles.imgArea}>
-                    <img
+                    <Image
+                      width={300}
+                      height={300}
                       src={news.eye_catch.url}
                       alt={news.title}
                       className={styles.img}
