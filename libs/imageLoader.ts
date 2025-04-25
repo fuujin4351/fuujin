@@ -11,7 +11,6 @@ export default function microcmsImageLoader({
   width?: number;
   height?: number;
 }) {
-  console.log("Loader args:");
   // microCMSの画像URLの場合のみ変換
   if (!src.includes("images.microcms-assets.io")) {
     return src;
