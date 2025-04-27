@@ -1,19 +1,19 @@
 import React, { useState } from "react";
-import { useRouter } from "next/router";
 import ReCAPTCHA from "react-google-recaptcha";
 import styles from "@/styles/contact/Confirm.module.scss";
 
-const Confirm = () => {
-  const router = useRouter();
-  const { name, email, message } = router.query;
+interface ConfirmProps {
+  data: { name: string; email: string; message: string };
+  onBack: () => void;
+}
+
+const Confirm: React.FC<ConfirmProps> = ({ data, onBack }) => {
+  const { name, email, message } = data;
   const [captchaValue, setCaptchaValue] = useState<string | null>(null);
   const resiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
 
   const handleBack = () => {
-    router.push({
-      pathname: "/contact",
-      query: { name, email, message },
-    });
+    onBack();
   };
 
   const handleChange = (value: string | null) => {
@@ -42,7 +42,7 @@ const Confirm = () => {
       if (res.status === 200) {
         console.log("送信しました");
         alert("送信完了");
-        router.push("/contact/success");
+        window.location.href = "/contact/success";
       } else {
         alert("送信に失敗しました。");
       }
@@ -66,10 +66,7 @@ const Confirm = () => {
       </div>
 
       <div className={styles.recaptcha}>
-        <ReCAPTCHA
-          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
-          onChange={handleChange}
-        />
+        <ReCAPTCHA sitekey={resiteKey || ""} onChange={handleChange} />
       </div>
 
       <div className={styles.btn}>
