@@ -1,10 +1,21 @@
 export const enbuList = [
   {
+    year: "2025",
+    name: "神徠",
+    theme:
+      "十八曲目のオリジナル曲の\nテーマは「雷神」\n神に焦がれし風の子が\n幾星霜の願いを継て\n蒼き風を空へと馳せる",
+    description: "風に宿るは雷鳴の轟き\nいま神を迎ふるとき",
+    url: "https://www.youtube.com/embed/hr7AcHxZwiY",
+    img: "/enbu/2025.webp",
+    startColor: "#4A0F0F", // 開始色
+    endColor: "#D4AF37", // 終了色
+  },
+  {
     year: "2024",
     name: "奏向",
     theme:
-      "十七曲目のオリジナル曲の\nテーマは「音」\n此処に奏でるは紡いだ音の物語",
-    description: "今、貴方に届けよう この想いを音に乗せて",
+      "十七曲目のオリジナル曲の\nテーマは「音」\n此処に奏でるは\n紡いだ音の物語",
+    description: "今、貴方に届けよう\nこの想いを音に乗せて",
     url: "https://www.youtube.com/embed/q8ieux_JNRQ?si=2LogIXMr22_XzWJH",
     img: "/enbu/2024.webp",
     startColor: "#ffffff", // 開始色
@@ -15,7 +26,7 @@ export const enbuList = [
     name: "輝燦",
     theme:
       "十六曲目のオリジナル曲の\nテーマは「月と太陽」\nたなびく光の絶え間より永遠を願い続けた黎明満ちる物語",
-    description: "貴方が私を照らし、私が貴方を照らす",
+    description: "貴方が私を照らし、\n私が貴方を照らす",
     url: "https://www.youtube.com/embed/yShWRDzy-sg?si=RukgO9297IKc3hWx",
     img: "/enbu/2023.webp",
     startColor: "#0f2350cc", // 開始色
@@ -26,7 +37,7 @@ export const enbuList = [
     name: "仁彩",
     theme:
       "十四曲目のオリジナル曲の\nテーマは「紡唄」\nあなたの色は私を染める糸は集いて交わり合う。",
-    description: "手繰り引き寄せ撚り合わせ纏う衣に想い染む",
+    description: "手繰り引き寄せ撚り合わせ\n纏う衣に想い染む",
     url: "https://www.youtube.com/embed/tfRv0xjXbDw?si=f1iDVUUvS2RY9QcU",
     img: "/enbu/2022.webp",
     startColor: "#ebd842", // 開始色
@@ -37,7 +48,7 @@ export const enbuList = [
     name: "NEO",
     theme:
       "十五曲目のオリジナル曲の\nテーマは「Cyberpunk」\nこれは過去が描く未来の物語。",
-    description: "ここに集うはネオンの都市 夜の帷が今降りる",
+    description: "ここに集うはネオンの都市\n夜の帷が今降りる",
     url: "https://www.youtube.com/embed/hui2LEGOp1g?si=Iq6kbnV4BsB6PtyU",
     img: "/enbu/2021.webp",
     startColor: "#595857", // 開始色
@@ -48,7 +59,7 @@ export const enbuList = [
     name: "仁彩",
     theme:
       "十四曲目のオリジナル曲の\nテーマは「紡唄」\nあなたの色は私を染める糸は集いて交わり合う。",
-    description: "手繰り引き寄せ撚り合わせ纏う衣に想い染む",
+    description: "手繰り引き寄せ撚り合わせ\n纏う衣に想い染む",
     url: "https://www.youtube.com/embed/Y075IrDAivE?si=rabrmjr8vzjLvYPM",
     img: "/enbu/2020.webp",
     startColor: "#ebd842", // 開始色
