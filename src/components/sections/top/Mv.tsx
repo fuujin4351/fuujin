@@ -96,7 +96,7 @@ function Mv() {
         <h1 className={styles.title + " c-mv-title --bk"}>
           駆けろ<span className={styles.titleBlue + " --blue"}>青</span>春、
           <br className="sp" />
-          /n轟け躍動
+          轟け躍動
         </h1>
       </div>
     </section>
