@@ -7,7 +7,7 @@ export const enbuList = [
     description: "風に宿るは雷鳴の轟き\nいま神を迎ふるとき",
     url: "https://www.youtube.com/embed/hr7AcHxZwiY",
     img: "/enbu/2025.webp",
-    startColor: "#B11226", // 開始色
+    startColor: "#27408B", // 開始色
     endColor: "#D4AF37", // 終了色
   },
   {
