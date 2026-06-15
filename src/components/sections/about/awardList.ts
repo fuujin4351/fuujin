@@ -44,5 +44,5 @@ export const awardList: Award[] = [
     prize: "MC賞受賞(個人賞)",
   },
   { year: "2023年", name: "東京よさこい", prize: "那珂川町長賞受賞" },
-  { year: "2025年", name: "NAGANO善光寺よさこい", prize: "敢闘賞" },
+  { year: "2025年", name: "NAGANO善光寺よさこい", prize: "敢闘賞受賞" },
 ];
