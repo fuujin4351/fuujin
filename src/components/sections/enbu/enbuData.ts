@@ -3,7 +3,7 @@ export const enbuList = [
     year: "2025",
     name: "神徠",
     theme:
-      "十八曲目のオリジナル曲の\nテーマは「雷神」\n神に焦がれし風の子が\n幾星霜の願いを継ぎて\n蒼き風を空へと馳せる",
+      "十八曲目のオリジナル曲の\nテーマは「雷神」\n神に焦がれし風の子が幾星霜の願いを継ぎて、\n蒼き風を空へと馳せる。",
     description: "風に宿るは雷鳴の轟き\nいま神を迎ふるとき",
     url: "https://www.youtube.com/embed/hr7AcHxZwiY",
     img: "/enbu/2025.webp",
