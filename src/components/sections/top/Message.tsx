@@ -152,11 +152,11 @@ function Message() {
             </span>
             <br />
             <span className={styles.line} ref={line5Ref}>
-              私たちはいつも失敗を恐れず、
+              私たちはいつも挑戦することを楽しみ、
             </span>
             <br />
             <span className={styles.line} ref={line6Ref}>
-              笑顔を忘れずにいます。
+              笑顔を忘れません。
             </span>
             <br />
             <br />
@@ -190,11 +190,11 @@ function Message() {
             <br />
 
             <span className={styles.line} ref={line11Ref}>
-              明るい未来を作るために、
+              より多くの笑顔を生み出すために、
             </span>
             <br />
             <span className={styles.line} ref={line12Ref}>
-              今日も小さな世界を明るく照らします。
+              私たちは今日も演舞を創り続けています。
             </span>
           </p>
         </div>
