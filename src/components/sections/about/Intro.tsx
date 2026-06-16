@@ -65,7 +65,7 @@ const Intro: React.FC = () => {
 const IntroText: React.FC = () => (
   <div className={styles.text}>
     <p className={styles.description}>
-      千葉工業大学の学生のみで構成された、
+      千葉工業大学の学生のみで構成された，
       <br />
       学生よさこいチーム『千葉工業大学よさこいソーラン風神部』
       <br />
