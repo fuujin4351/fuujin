@@ -98,7 +98,7 @@ const UndContent: React.FC = () => (
     </div>
     <div className={styles.undtext}>
       <p className={styles.description}>
-        私たち風神は、毎年演舞テーマ、振り付け、曲、衣装までを自ら制作し、毎年違った演舞をお祭りで披露しています。
+        私たち風神は、演舞テーマ、振付、曲、衣装までを自ら制作し、毎年違った演舞をお祭りで披露しています。
         <br />
         主な活動内容としては，大学内のイベントの活性化を行っています。
         <br />
