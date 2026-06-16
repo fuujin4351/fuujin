@@ -65,7 +65,7 @@ const Intro: React.FC = () => {
 const IntroText: React.FC = () => (
   <div className={styles.text}>
     <p className={styles.description}>
-      千葉工業大学の学生のみで構成された、よさこいソーランのチーム『千葉工業大学よさこいソーラン風神部』です。
+      千葉工業大学の学生のみで構成された、学生よさこいチーム『千葉工業大学よさこいソーラン風神部』です。
       <br />
       ・2004年5月5日　創部
       <br />
