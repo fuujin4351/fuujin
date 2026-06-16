@@ -172,19 +172,19 @@ function Message() {
             <br />
 
             <span className={styles.line + " pc"} ref={line91Ref}>
-              それが逆風にも負けず、自由に笑顔を広げる、
+              その想いは代を超えて受け継がれながら、
             </span>
             <br className="pc" />
             <span className={styles.line + " sp"} ref={line92Ref}>
-              それが逆風にも負けず、
+              その想いは代を超えて
             </span>
             <br className="sp" />
             <span className={styles.line + " sp"} ref={line93Ref}>
-              自由に笑顔を広げる、
+              受け継がれながら、
             </span>
             <br className="sp" />
             <span className={styles.line} ref={line10Ref}>
-              貴重な存在になるはずだから。
+              多くの人へ笑顔を届けています。
             </span>
             <br />
             <br />
