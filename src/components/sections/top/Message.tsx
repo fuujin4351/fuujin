@@ -134,11 +134,11 @@ function Message() {
         <div className={styles.textArea}>
           <p className={styles.text + " c-message-text"}>
             <span className={styles.line} ref={line1Ref}>
-              踊って、笑って、語り合う。
+              踊って，笑って，語り合う。
             </span>
             <br />
             <span className={styles.line} ref={line2Ref}>
-              そんな温かな時間を通じて、
+              そんな温かな時間を通じて，
             </span>
             <br />
             <span className={styles.line} ref={line3Ref}>
@@ -148,11 +148,11 @@ function Message() {
             <br />
 
             <span className={styles.line} ref={line4Ref}>
-              だからこそ、
+              だからこそ，
             </span>
             <br />
             <span className={styles.line} ref={line5Ref}>
-              私たちはいつも挑戦することを楽しみ、
+              私たちはいつも挑戦することを楽しみ，
             </span>
             <br />
             <span className={styles.line} ref={line6Ref}>
@@ -172,7 +172,7 @@ function Message() {
             <br />
 
             <span className={styles.line + " pc"} ref={line91Ref}>
-              その想いは代を超えて受け継がれながら、
+              その想いは代を超えて受け継がれながら，
             </span>
             <br className="pc" />
             <span className={styles.line + " sp"} ref={line92Ref}>
@@ -180,7 +180,7 @@ function Message() {
             </span>
             <br className="sp" />
             <span className={styles.line + " sp"} ref={line93Ref}>
-              受け継がれながら、
+              受け継がれながら，
             </span>
             <br className="sp" />
             <span className={styles.line} ref={line10Ref}>
@@ -190,7 +190,7 @@ function Message() {
             <br />
 
             <span className={styles.line} ref={line11Ref}>
-              より多くの笑顔を生み出すために、
+              より多くの笑顔を生み出すために，
             </span>
             <br />
             <span className={styles.line} ref={line12Ref}>
