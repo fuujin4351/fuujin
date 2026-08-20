@@ -45,10 +45,6 @@ const Member = ({ member }: Props) => {
                 <p>
                   <span>{member.nickname}</span>
                   <br />
-                  {member.nickname}
-                  <br />
-                   <span>{member.nickname1}</span>
-                  <br />
                   {member.nickname1}
                   <br />
                   <span>{member.cont1}</span>
