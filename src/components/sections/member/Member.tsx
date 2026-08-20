@@ -7,6 +7,8 @@ type MemberBody = {
     url: string;
   };
   name: string;
+  nickname: string;
+  nickname1: string;
   cont1: string;
   desc1: string;
   cont2: string;
@@ -41,6 +43,14 @@ const Member = ({ member }: Props) => {
               <div className={styles.content}>
                 <h1>{member.name}</h1>
                 <p>
+                  <span>{member.nickname}</span>
+                  <br />
+                  {member.nickname}
+                  <br />
+                   <span>{member.nickname1}</span>
+                  <br />
+                  {member.nickname1}
+                  <br />
                   <span>{member.cont1}</span>
                   <br />
                   {member.desc1}
